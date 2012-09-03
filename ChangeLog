@@ -1,0 +1,2 @@
+2013-06-14   Luigi Augugliaro <luigi.augugliaro@unipa.it> version 1.0.1
+	* nasty bug fixed in fortran - removed array-bounds problems

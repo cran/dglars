@@ -15,7 +15,7 @@ dglars (X, y, family = c("binomial", "poisson"), control = list())
  }
 \details{
 \code{dglars} function implements the differential geometric generalization of the least angle regression method (Efron et al., 2004) proposed
-in Augugliaro et al. (accepted). Actual version of the package can be used to estimate the solution curve for a logistic regression model 
+in Augugliaro et al. (2013). Actual version of the package can be used to estimate the solution curve for a logistic regression model 
 (\code{family = "binomial"}) and for a Poisson regression model (\code{family = "poisson"}).
 \cr\cr
 The dgLARS solution curve can be estimated using two different algorithms, i.e. the predictor-corrector method and the cyclic coordinate descent method (see below for 
@@ -102,16 +102,15 @@ The \code{control} argument is a list that can supply any of the following compo
 	\item{control}{the list of control parameters used to compute the dgLARS solution curve.}
 }
 \references{
-Augugliaro, L., Mineo A.M. and Wit E.C. (accepted)
-\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}
-\cr\cr
-Augugliaro, L., Mineo A.M. and Wit E.C. (2012)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.} Vol 75(3), 471-498.\cr\cr
+Augugliaro L., Mineo A.M. and Wit E.C. (2012)
 \emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
 \cr\cr
 Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004)
 \emph{Least Angle Regression}, \emph{The Annals of Statistics} Vol. 32(2), 407-499.
 \cr\cr
-Friedman, J., Hastie, T. and Tibshirani, R. (2010) 
+Friedman J., Hastie T. and Tibshirani R. (2010) 
 \emph{Regularization Paths for Generalized Linear Models via Coordinate Descent}, \emph{Journal of Statistical Software}, Vol. 33(1), 1-22.
 }
 \author{Luigi Augugliaro\cr 
@@ -120,8 +119,10 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \code{\link{coef.dglars}}, \code{\link{plot.dglars}}, \code{\link{print.dglars}} and \code{\link{summary.dglars}} methods.
 }
 \examples{
-######################
-# Logistic regression model
+#############################
+# Logistic regression model #
+
+set.seed(123)
 
 # low dimensional setting
 n <- 100

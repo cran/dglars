@@ -24,6 +24,8 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 ######################
 # Logistic regression model
 
+set.seed(123)
+
 n <- 100
 p <- 10
 X <- matrix(rnorm(n*p), n, p)

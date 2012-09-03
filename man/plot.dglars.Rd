@@ -26,8 +26,10 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \code{\link{dglars}} function.
 }
 \examples{
-######################
+###########################
 # Logistic regression model
+
+set.seed(123)
 
 n <- 100
 p <- 10

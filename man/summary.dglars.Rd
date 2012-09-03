@@ -36,9 +36,11 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \code{\link{dglars}} function.
 }
 \examples{
-######################
+###########################
 # Logistic regression model
-#
+
+set.seed(123)
+
 n <- 100
 p <- 10
 X <- matrix(rnorm(n*p), n, p)
@@ -54,9 +56,9 @@ summary(fit, complexity = "gdf")
 tbl <- make_summary_table(fit, complexity = "gdf")
 str(tbl)
 
-######################
+##########################
 # Poisson regression model
-#
+
 n <- 100
 p <- 10
 X <- matrix(rnorm(n*p), n, p)

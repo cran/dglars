@@ -93,10 +93,9 @@ The \code{control} argument is a list that can supply any of the following compo
 	\item{control}{the list of control parameters used to compute the cross-validation deviance.}
 }
 \references{
-Augugliaro, L., Mineo A.M. and Wit E.C. (accepted)
-\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}\cr
-\cr
-Augugliaro, L., Mineo A.M. and Wit E.C. (2012)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.} Vol 75(3), 471-498.\cr\cr
+Augugliaro L., Mineo A.M. and Wit E.C. (2012)
 \emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
 }
 \author{Luigi Augugliaro\cr 
@@ -105,8 +104,10 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \code{\link{coef.cvdglars}}, \code{\link{print.cvdglars}}, \code{\link{plot.cvdglars}} methods
 }
 \examples{
-######################
+###########################
 # Logistic regression model
+
+set.seed(123)
 
 n <- 100
 p <- 10

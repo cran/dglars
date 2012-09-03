@@ -28,9 +28,11 @@ Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \code{\link{dglars}} function.
 }
 \examples{
-######################
+###########################
 # Logistic regression model
-#
+
+set.seed(123)
+
 n <- 100
 p <- 10
 X <- matrix(rnorm(n*p), n, p)
@@ -39,6 +41,19 @@ eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
 fit <- dglars(X, y, family = "binomial")
+fit
+
+#############################
+# Poisson regression model #
+
+n <- 100
+p <- 10
+X <- matrix(rnorm(n*p), n, p)
+b <- 1:2
+eta <- b[1] + X[,1] * b[2]
+mu <- poisson()$linkinv(eta)
+y <- rpois(n, mu)
+fit <- dglars(X, y, family = "poisson")
 fit
 }
 \keyword{models}
