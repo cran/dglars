@@ -1,2 +1,15 @@
+2013-08-04 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 1.0.2
+	* dglars() function has been changed to handle the formula interface; dglars.fit()
+		works with the design matrix X and the responce vector y.
+	* The control argument "method = dgLAR" has been changed in "method = dgLARS".
+	* The output from print.dglars() has been changed.
+	* The output from summary.dglars() has been changed.
+	* The summary.dglars() implements the a general measure of goodness-of-fit.
+	* The function plot.dglars() has been changed in order to evauate the fitted models
+		by means of a general measure of goodness-of-fit.
+	* gdf() is now a function of a fitted dglars object.
+	* cvdglars() function has been changed to handle the formula interface; cvdglars.fit()
+		works with the design matrix X and the responce vector y.
+
 2013-06-14   Luigi Augugliaro <luigi.augugliaro@unipa.it> version 1.0.1
 	* nasty bug fixed in fortran - removed array-bounds problems

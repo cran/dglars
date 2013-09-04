@@ -1,18 +1,11 @@
-gdf <- function(X,y,beta=NULL,control=list()){
-	if(!is.list(control))
-	stop("control is not a list")
-	if(is.null(beta)){
-		out.dglars <- dglars(X,y,family="binomial",control=control)
-		if(out.dglars$conv!=0) stop("")
-		beta <- out.dglars$beta
-	} else {
-		if(is.vector(beta)) beta <- as.matrix(beta)
-	}
+gdf <- function(object){
+	if(object$family != "binomial") stop("gdf function is defined only for binomial family")
+	y <- object$y
+	X <- object$X
+	beta <- object$beta
 	beta_dim <- dim(beta)
 	p <- beta_dim[1]-1
 	np <- beta_dim[2]
-	if(dim(X)[2]!=p)
-	stop("dim(beta)[1]!=p")
 	gdf_v <- vector(length=np)
 	out.glm <- glm(y~X,family="binomial")
 	if(!out.glm$converged){

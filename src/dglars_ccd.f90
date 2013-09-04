@@ -314,6 +314,7 @@ subroutine cvdglars_ccd_b(n,p,X,y,foldid,nfold,ng,g,b,dev_m,dev_v,g_hat,mthd,g0,
 	if(conv.ne.0) return
 	b=b_cv(:,np)
 	g_hat=g0
+	g(1)=g_seq(1)
 end subroutine cvdglars_ccd_b
 !!!!!!!!!!!!!!!!!!
 ! POISSON FAMILY !
@@ -352,4 +353,5 @@ subroutine cvdglars_ccd_p(n,p,X,y,foldid,nfold,ng,g,b,dev_m,dev_v,g_hat,mthd,g0,
 	if(conv.ne.0) return
 	b=b_cv(:,np)
 	g_hat=g0
+	g(1)=g_seq(1)
 end subroutine cvdglars_ccd_p

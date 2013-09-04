@@ -1,21 +1,34 @@
 \name{cvdglars}
 \alias{cvdglars}
+\alias{cvdglars.fit}
 \title{Cross-validation deviance for dgLARS}
 \description{
 Uses the \eqn{k}-fold cross-validation deviance to estimate the solution point of the dgLARS solution curve.
 }
 \usage{
-cvdglars(X, y, family = c("binomial", "poisson"), control = list())
+cvdglars(formula, family = c("binomial", "poisson"), data, 
+subset, contrast = NULL, control = list())
+
+cvdglars.fit(X, y, family = c("binomial", "poisson"), 
+control = list())
 }
 \arguments{
-  \item{X}{Design matrix of dimension \eqn{n\times p}.}
-  \item{y}{Response vector.}
-  \item{family}{A description of the error distribution used in the model.}
-  \item{control}{A list of control parameters. See 'Details'.}
+  \item{formula}{an object of class "formula": a symbolic description of the model to be fitted.}
+  \item{family}{a description of the error distribution used in the model (see below for more details).}
+  \item{data}{an optional data frame, list or environment (or object coercible by 'as.data.frame' to a data frame) containing the variables in the model.  If not found in 'data', the
+  variables are taken from 'environment(formula)'.}
+  \item{subset}{an optional vector specifying a subset of observations to be used in the fitting process.}
+  \item{contrast}{an optional list. See the 'contrasts.arg' of 'model.matrix.default'.}
+  \item{control}{a list of control parameters. See 'Details'.}
+  \item{X}{design matrix of dimension \eqn{n\times p}.}
+  \item{y}{response vector.}
  }
 \details{
 \code{cvdglars} function runs \code{dglars} \code{nfold}+1 times. The deviance is stored, and the average and its standard deviation over the folds are computed.
-\cr\cr
+
+\code{cvdglars.fit} is the workhorse function: it is more efficient when the design matrix have already been calculated. For this reason we suggest to use this function 
+when the dgLARS method is applied in a high-dimensional setting, i.e. when \code{p>n} .
+
 The \code{control} argument is a list that can supply any of the following components:
 \describe{
 	\item{\code{algorithm}}{a string to specify the algorithm used to fit the dgLARS solution curve. If \code{algorithm = "pc"} (default)
@@ -78,7 +91,9 @@ The \code{control} argument is a list that can supply any of the following compo
 	\item{beta}{the vector of the coefficients estimated by cross-validation;}
 	\item{dev_m}{a vector of length \code{ng} used to store the mean cross-validation deviance;}
 	\item{dev_v}{a vector of length \code{ng} used to store the variance of the mean cross-validation deviance;}
+	\item{g0}{the smallest value for the tuning parameter;}
 	\item{g_hat}{the value of the tuning parameter corresponding to the minimum of the cross-validation deviance;}
+	\item{g_max}{the value of the tuning parameter corresponding to the starting point of the dgLARS solution curve;}
 	\item{X}{the used design matrix;}
 	\item{y}{the used response vector;}
 	\item{conv}{an integer value used to encode the warnings and the errors related to the algorithm used to dgLARS solution curve. The values returned are:
@@ -94,7 +109,8 @@ The \code{control} argument is a list that can supply any of the following compo
 }
 \references{
 Augugliaro L., Mineo A.M. and Wit E.C. (2013)
-\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.} Vol 75(3), 471-498.\cr\cr
+\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
+
 Augugliaro L., Mineo A.M. and Wit E.C. (2012)
 \emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
 }
@@ -116,8 +132,8 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-fit_cv <- cvdglars(X, y, family = "binomial")
-fit <- dglars(X, y, family = "binomial", control = list(g0=fit_cv$g_hat))
+fit_cv <- cvdglars.fit(X, y, family = "binomial")
+fit <- dglars.fit(X, y, family = "binomial", control = list(g0=fit_cv$g_hat))
 fit_cv
 fit$beta[,fit$np]
 }

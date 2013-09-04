@@ -383,6 +383,7 @@ subroutine cvdglars_pc_p(n,p,X,y,foldid,nfold,ng,g,b,dev_m,dev_v,g_hat,nv,mthd,g
 	if(conv.ne.0) return
 	b=b_cv(:,np)
 	g_hat=g0
+	g(1)=g_seq(1)
 end subroutine cvdglars_pc_p
 subroutine predict_p(n,p,X,y,np,b,g_seq,ng,g,dev)
 	integer	:: n,p,np,ng,conv

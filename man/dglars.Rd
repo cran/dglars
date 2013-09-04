@@ -1,23 +1,36 @@
 \name{dglars}
 \alias{dglars}
+\alias{dglars.fit}
 \title{dgLARS solution curve for GLM}
 \description{
 \code{dglars} function is used to estimate the solution curve implicitly defined by the dgLARS method for logistic and Poisson regression model.
 }
 \usage{
-dglars (X, y, family = c("binomial", "poisson"), control = list())
+dglars(formula, family = c("binomial", "poisson"), data, 
+subset, contrast = NULL, control = list())
+
+dglars.fit(X, y, family = c("binomial", "poisson"), 
+control = list())
 }
 \arguments{
-  \item{X}{Design matrix of dimension \eqn{n\times p}.}
-  \item{y}{Response vector.}
-  \item{family}{A description of the error distribution used in the model (see below for more details).}
-  \item{control}{A list of control parameters. See 'Details'.}
+  \item{formula}{an object of class "formula": a symbolic description of the model to be fitted.}
+  \item{family}{a description of the error distribution used in the model (see below for more details).}
+  \item{data}{an optional data frame, list or environment (or object coercible by 'as.data.frame' to a data frame) containing the variables in the model.  If not found in 'data', the
+  variables are taken from 'environment(formula)'.}
+  \item{subset}{an optional vector specifying a subset of observations to be used in the fitting process.}
+  \item{contrast}{an optional list. See the 'contrasts.arg' of 'model.matrix.default'.}
+  \item{control}{a list of control parameters. See 'Details'.}
+  \item{X}{design matrix of dimension \eqn{n\times p}.}
+  \item{y}{response vector.}
  }
 \details{
 \code{dglars} function implements the differential geometric generalization of the least angle regression method (Efron et al., 2004) proposed
 in Augugliaro et al. (2013). Actual version of the package can be used to estimate the solution curve for a logistic regression model 
 (\code{family = "binomial"}) and for a Poisson regression model (\code{family = "poisson"}).
-\cr\cr
+
+\code{dglars.fit} is the workhorse function: it is more efficient when the design matrix have already been calculated. For this reason we suggest to use this function 
+when the dgLARS method is applied in a high-dimensional setting, i.e. when \code{p>n} .
+
 The dgLARS solution curve can be estimated using two different algorithms, i.e. the predictor-corrector method and the cyclic coordinate descent method (see below for 
 more details about the control parameter \code{algorithm}). The first algorithm is based on two steps. In the first step, called predictor step, an approximation of the point 
 that lies on the solution curve is computed. If the control parameter \code{dg_max} is equal to zero, in this step it is also computed an approximation of the optimal 
@@ -27,7 +40,7 @@ correct the approximation to the solution point  computed in the previous step. 
 compute the approximation of the point that lies on the solution curve scales as the cube of the variables, this means that such algorithm is cumbersome in a high dimensional 
 setting. To overcome this problem, the second algorithm compute the dgLARS solution curve using an adaptive version of the cyclic coordinate descent method proposed 
 in Friedman et al. (2010).
-\cr\cr
+
 The \code{control} argument is a list that can supply any of the following components:
 \describe{
 	\item{\code{algorithm}}{a string to specify the algorithm used to fit the dgLARS solution curve. If \code{algorithm = "pc"} (default)
@@ -83,7 +96,7 @@ The \code{control} argument is a list that can supply any of the following compo
 	\item{family}{a description of the error distribution used in the model;}
 	\item{np}{the number of points of the dgLARS solution curve;}
 	\item{beta}{the \eqn{(p+1)\times\code{np}} matrix corresponding to the dgLARS solution curve;}
-	\item{ru}{the matrix of the Rao's score test statistics of the variables included in the final model;}
+	\item{ru}{the matrix of the Rao's score test statistics of the variables included in the final model. This component is reported only if the predictor-corrector algorithm is used;}
 	\item{dev}{the \code{np} dimensional vector of the deviance corresponding to the values of the tuning parameter \eqn{\gamma};}
 	\item{df}{the sequence of number of nonzero coefficients for each value of the tuning parameter \eqn{\gamma};}
 	\item{g}{the sequence of \eqn{\gamma} values used to compute the solution curve;}
@@ -103,13 +116,14 @@ The \code{control} argument is a list that can supply any of the following compo
 }
 \references{
 Augugliaro L., Mineo A.M. and Wit E.C. (2013)
-\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.} Vol 75(3), 471-498.\cr\cr
+\emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
+
 Augugliaro L., Mineo A.M. and Wit E.C. (2012)
 \emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
-\cr\cr
+
 Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004)
-\emph{Least Angle Regression}, \emph{The Annals of Statistics} Vol. 32(2), 407-499.
-\cr\cr
+\emph{Least Angle Regression}, \emph{The Annals of Statistics}, Vol. 32(2), 407-499.
+
 Friedman J., Hastie T. and Tibshirani R. (2010) 
 \emph{Regularization Paths for Generalized Linear Models via Coordinate Descent}, \emph{Journal of Statistical Software}, Vol. 33(1), 1-22.
 }
@@ -132,10 +146,15 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-system.time(fit <- dglars(X, y, family = "binomial"))
-system.time(
-fit <- dglars(X, y, family = "binomial", control = list(algorithm = "ccd"))
-)
+system.time(fit <- dglars.fit(X, y, family = "binomial"))
+system.time(fit <- dglars.fit(X, y, family = "binomial", 
+control = list(algorithm = "ccd")))
+
+dataset <- data.frame(x = X, y = y)
+rm(X, y)
+system.time(fit <- dglars(y ~ ., family = "binomial", data=dataset))
+system.time(fit <- dglars(y ~ ., family = "binomial", 
+control = list(algorithm = "ccd"), data =dataset))
 
 # high dimensional setting
 n <- 100
@@ -145,10 +164,15 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-system.time(fit <- dglars(X, y, family = "binomial"))
-system.time(
-fit <- dglars(X, y, family = "binomial", control = list(algorithm = "ccd"))
-)
+system.time(fit <- dglars.fit(X, y, family = "binomial"))
+system.time(fit <- dglars.fit(X, y, family = "binomial", 
+control = list(algorithm = "ccd")))
+
+dataset <- data.frame(x = X, y = y)
+rm(X, y)
+system.time(fit <- dglars(y ~ ., family = "binomial", data=dataset))
+system.time( fit <- dglars(y ~ ., family = "binomial", 
+control = list(algorithm = "ccd"), data =dataset))
 }
 \keyword{models}
 \keyword{regression}

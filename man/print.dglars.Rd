@@ -40,7 +40,7 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-fit <- dglars(X, y, family = "binomial")
+fit <- dglars.fit(X, y, family = "binomial")
 fit
 
 #############################
@@ -53,7 +53,7 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- poisson()$linkinv(eta)
 y <- rpois(n, mu)
-fit <- dglars(X, y, family = "poisson")
+fit <- dglars.fit(X, y, family = "poisson")
 fit
 }
 \keyword{models}

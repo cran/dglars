@@ -30,7 +30,7 @@ b <- 1:2
 eta <- b[1] + X[,1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-fit <- cvdglars(X, y, family = "binomial")
+fit <- cvdglars.fit(X, y, family = "binomial")
 coef(fit)
 }
 \keyword{models}
