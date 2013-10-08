@@ -32,7 +32,7 @@ summary.dglars <- function(object,k=c("BIC","AIC"),complexity=c("df","gdf"),digi
 	cat("\nCall:  ", paste(deparse(object$call), sep = "\n", collapse = "\n"), "\n\n", sep = "")
 	print.data.frame(tbl.format, print.gap = 2, quote = FALSE, row.names = FALSE, ...)
 	cat("\n==============================================\n")
-	cat("\nBest model indentified by",knm,"criterion ( k =",k,"and complexity =",complexity,"):\n\n", bestmodel.formula,"\n")
+	cat("\nBest model identified by",knm,"criterion ( k =",k,"and complexity =",complexity,"):\n\n", bestmodel.formula,"\n")
 	cat("\nCoefficients:\n\n")
 	print.default(format(tbl$b.gof, digits = digits), print.gap = 2, quote = FALSE,...)
 	cat("\n\n",knm,": ",format(min(tbl$table[5]), digits = digits))

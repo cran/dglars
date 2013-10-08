@@ -1,8 +1,8 @@
 Package: dglars
 Type: Package
 Title: Differential Geometric LARS (dgLARS) method
-Version: 1.0.2
-Date: 2013-09-04
+Version: 1.0.3
+Date: 2013-10-08
 Author: Luigi Augugliaro
 Maintainer: Luigi Augugliaro <luigi.augugliaro@unipa.it>
 Description: dglars implements the differential geometric extension
@@ -13,8 +13,8 @@ Description: dglars implements the differential geometric extension
         method.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2013-09-04 16:26:27 UTC; luigi
+Packaged: 2013-10-09 16:29:22 UTC; luigi
 Depends: R (>= 2.10)
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2013-09-04 20:43:29
+Date/Publication: 2013-10-09 21:13:41
