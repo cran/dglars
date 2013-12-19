@@ -88,6 +88,8 @@ The \code{control} argument is a list that can supply any of the following compo
 \code{cvdglars} returns an object with S3 class \code{"cvdglars"}, i.e. a list containing the following components:
 	\item{call}{the call that produced this object;}
 	\item{family}{a description of the error distribution used in the model;}
+	\item{formula_cv}{an object of class "formula" used to describe the model estimated by cross-validation (available only cvdglars() method);}
+	\item{var_cv}{a character vector with the name of variables selected by cross-validation;}
 	\item{beta}{the vector of the coefficients estimated by cross-validation;}
 	\item{dev_m}{a vector of length \code{ng} used to store the mean cross-validation deviance;}
 	\item{dev_v}{a vector of length \code{ng} used to store the variance of the mean cross-validation deviance;}

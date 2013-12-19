@@ -15,5 +15,6 @@ cvdglars <- function(formula,family=c("binomial","poisson"),data,subset,contrast
 	X <- X[,-1,drop=FALSE]
 	fit <- cvdglars.fit(X=X,y=y,family=family,control=control)
 	fit$call <- this.call
+	fit$formula_cv <- update(formula, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
 	fit
 }
