@@ -110,6 +110,9 @@ The \code{control} argument is a list that can supply any of the following compo
 	\item{control}{the list of control parameters used to compute the cross-validation deviance.}
 }
 \references{
+Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
+
 Augugliaro L., Mineo A.M. and Wit E.C. (2013)
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
 

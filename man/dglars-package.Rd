@@ -16,8 +16,8 @@ Differential geometric LARS (dgLARS) method for some generalized linear models
 \tabular{ll}{
 Package: \tab dglars\cr
 Type: \tab Package\cr
-Version: \tab 1.0.4\cr
-Date: \tab 2013-12-19\cr
+Version: \tab 1.0.5\cr
+Date: \tab 2014-08-09\cr
 License: \tab GPL (>=2)
 }
 }
@@ -25,7 +25,10 @@ License: \tab GPL (>=2)
 Luigi Augugliaro\cr
 Maintainer: Luigi Augugliaro  <luigi.augugliaro@unipa.it>
 }
-\references{Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+\references{Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
+
+Augugliaro L., Mineo A.M. and Wit E.C. (2013)
 \emph{dgLARS: a differential geometric approach to sparse generalized linear 
   models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
  

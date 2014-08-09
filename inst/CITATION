@@ -1,0 +1,20 @@
+citHeader("To cite dglars in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{dglars}: An {R} Package to Estimate Sparse Generalized Linear Models",
+  author       = personList(as.person("Luigi Augugliaro"),
+                   as.person("Angelo M. Mineo"),
+                   as.person("Ernst C. Wit")),
+  journal      = "Journal of Statistical Software",
+  year         = "2014",
+  volume       = "59",
+  number       = "8",
+  pages        = "1--40",
+  url          = "http://www.jstatsoft.org/v59/i08/",
+
+  textVersion  =
+  paste("Luigi Augugliaro, Angelo M. Mineo, Ernst C. Wit (2014).",
+        "dglars: An R Package to Estimate Sparse Generalized Linear Models.",
+        "Journal of Statistical Software, 59(8), 1-40.",
+        "URL http://www.jstatsoft.org/v59/i08/.")
+)
