@@ -1,4 +1,4 @@
-cvdglars <- function(formula,family=c("binomial","poisson"),data,subset,contrast=NULL,control=list()){
+cvdglars <- function(formula, family = gaussian, g, unpenalized, b_wght, data, subset, contrast = NULL, control = list()){
 	this.call <- match.call()
 	if (missing(data))	data <- environment(formula)
 	mf <- match.call(expand.dots = FALSE)
@@ -8,13 +8,14 @@ cvdglars <- function(formula,family=c("binomial","poisson"),data,subset,contrast
 	mf[[1L]] <- as.name("model.frame")
 	mf <- eval(mf, parent.frame())
 	mt <- attr(mf, "terms")
-	if(attr(mt,"intercept") == 0) stop("Models without intercept are not allowed in this version of the package")
+	if(attr(mt,"intercept") == 0)
+        stop("Models without intercept are not allowed in this version of the package")
 	y <- model.response(mf, "any")
-	X <- if (!is.empty.model(mt)) model.matrix(mt,mf,contrasts)
-	else stop("Model matrix is empty")
-	X <- X[,-1,drop=FALSE]
-	fit <- cvdglars.fit(X=X,y=y,family=family,control=control)
+	X <- if (!is.empty.model(mt)) model.matrix(mt, mf, contrasts)
+            else stop("Model matrix is empty")
+	X <- X[, -1, drop = FALSE]
+	fit <- cvdglars.fit(X = X, y = y, family = family, g = g, unpenalized = unpenalized, b_wght = b_wght, control = control)
 	fit$call <- this.call
-	fit$formula_cv <- update(formula, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
+	fit$formula <- update(formula, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
 	fit
 }

@@ -1,20 +1,23 @@
 Package: dglars
 Type: Package
-Title: Differential Geometric LARS (dgLARS) method
-Version: 1.0.5
-Date: 2014-08-09
+Title: Differential Geometric Least Angle Regression
+Version: 2.0.0
+Date: 2017-02-24
 Author: Luigi Augugliaro
 Maintainer: Luigi Augugliaro <luigi.augugliaro@unipa.it>
-Description: dglars implements the differential geometric extension
-        of the least angle regression method for logistic and Poisson 
-        regression models. To compute the implicitly defined solution 
-        curve, two different algorithms are implemented, i.e. the 
-        predictor-corrector method and the cyclic coordinate descent
-        method.
+Imports: methods
+Description: Differential geometric least angle regression method for fitting 
+	sparse generalized linear models. In this version of the package, the user can fit
+	models specifying Gaussian, Poisson, Binomial, Gamma and Inverse Gaussian family. 
+	Furthermore, several link functions can be used to model the relationship between the 
+	conditional expected value of the response variable and the linear predictor. The 
+	solution curve can be computed using an efficient predictor-corrector or a cyclic 
+	coordinate descent algorithm, as described in the paper linked to via the URL below.
 License: GPL (>= 2)
+URL: http://www.jstatsoft.org/v59/i08/.
 LazyLoad: yes
-Depends: R (>= 2.10)
+Depends: Matrix, R (>= 2.10)
 NeedsCompilation: yes
 Repository: CRAN
-Packaged: 2014-08-09 14:34:46 UTC; francesca
-Date/Publication: 2014-08-09 18:42:20
+Packaged: 2017-02-28 08:35:33 UTC; luigiaugugliaro
+Date/Publication: 2017-02-28 11:08:35

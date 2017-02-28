@@ -1,1 +1,1 @@
-coef.cvdglars <- function(object,...)	object$beta
+coef.cvdglars <- function(object,...)   list(beta = object$beta, phi = object$phi)

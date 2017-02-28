@@ -1,8 +1,8 @@
 \name{print.cvdglars}
 \alias{print.cvdglars}
-\title{Print a cvdglars object}
+\title{Print a cvdglars Object}
 \description{
-Print information about the points of the dgLARS solution curve identified by the \eqn{k}-fold cross-validation deviance.
+Print information about the dgLARS models selected by \eqn{k}-fold cross-validation deviance.
 }
 \usage{
 \method{print}{cvdglars}(x, digits = max(3, getOption("digits") - 3), ...)
@@ -13,10 +13,13 @@ Print information about the points of the dgLARS solution curve identified by th
   \item{\dots}{additional print arguments}
 }
 \details{
-The call that produced the object \code{x} is printed, followed by the estimate of the coefficients of the variables included in the active set. Such
-estimates are obtained using the whole data set while the optimal value of the tuning parameter is estimated by \eqn{k}-fold cross-validation 
-deviance. The last part of the print gives information about the algorithm and the method used to compute the solution curve. The code about 
-the convergence of the used algorithm is also showed.
+The call that produced the object \code{x} is printed, followed by 
+the estimate of the coefficients of the variables included in the 
+active set. Such estimates are obtained using the whole data set 
+while the optimal value of the tuning parameter is estimated by 
+\eqn{k}-fold cross-validation deviance. The last part of the print 
+gives information about the \eqn{k}-fold cross-validation deviance, 
+the algorithm and the method used to compute the solution curve.
 }
 \value{The vector of the estimates is silently returned.}
 \author{Luigi Augugliaro\cr 

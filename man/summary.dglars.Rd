@@ -1,94 +1,121 @@
 \name{summary.dglars}
 \alias{summary.dglars}
-\title{Print the summary for a dglars object}
+\title{Summaryzing dgLARS Fits}
 \description{
-Summary method for class 'dglars'.
+Summary method for an object with class 'dglars'.
 }
 \usage{
-\method{summary}{dglars}(object, k = c("BIC", "AIC"), complexity = c("df", "gdf"), 
+\method{summary}{dglars}(object, type = c("AIC", "BIC"), 
 digits = max(3, getOption("digits") - 3), ...)
 }
 \arguments{
-  \item{object}{fitted \code{dglars} object}
-  \item{k}{character/numeric argument used to specify the 'weight' of the complexity part in the measure of goodness-of-fit used to select the best model (see below for more details). 
-  Default is \code{k = "BIC"};}
-  \item{complexity}{measure used to define the complexity of a model. If \code{complexity = "df"} then the complexity is defined as the number of nonzero coefficients. For logistic 
-  regression model it is possible to use the generalized degrees of freedom to measure the complexity of a model (\code{complexity = "gdf"}). Default is \code{complexity = "df"};}
-  \item{digits}{significant digits in printout}
-  \item{\dots}{additional print arguments}
+\item{object}{fitted \code{dglars} object.}
+\item{type}{a description of the used measure of goodness-of-fit,
+i.e., the Akaike Information Criterion (\code{type = "AIC"}) or the 
+Bayesian Information Criterion (\code{type = "BIC"}). See below for 
+the description of how to define more general measures of 
+goodness-of-fit.}
+\item{digits}{significant digits in printout.}
+\item{\dots}{additional arguments passed to \dQuote{\code{AIC.dglars}} 
+or \dQuote{\code{BIC.dglars}}. See below for more details.}
 }
 \details{
-\code{summary.dglars} gives us information about the sequence of models identified by dgLARS method. 
+\code{summary.dglars} gives information about the sequence of models 
+estimtaed by dgLARS method.
 
-To select the best model the summary method uses a measure of goodness-of-fit (GoF) defined as follows: \deqn{Dev + k \times complexity,}{Dev + k  complexity,} 
-where \eqn{Dev} is the residual deviance, \eqn{complexity} is the term used to measure the complexity of the fitted model and \eqn{k} is the term used to 'weight'  
-the complexity part in the GoF formula.  By default the summary method computed the BIC criterion to select the best model, which means that the argument \code{complexity} is 
-equal \code{"df"} (the number of nonzero coefficients) and the argument \code{k} is equal to \code{"BIC"}. The AIC criterion can be easily computed setting \code{k = "AIC"} and 
-\code{complexity = "df"}. The user can define other measures of goodness-of-fit, specifying \code{k} as any non-negative integer and, for example, using the generalized degrees-of-
-freedom to measure the complexity of the fitted model (see the \code{gdf} function for more details). 
+To select the best fitted model, summary method uses a measure of
+goodness-of-fit (GoF) defined as follows: 
+\deqn{-2 \mbox{log-likelihood} + k \mbox{comp},}{-2 * log-likelihood + k * comp,}
+where \dQuote{comp} represents the term used to measure the complexity
+of the fitted models, and \eqn{k} is the 'weight' of the complexity 
+in the previous formula. This quantity is computed using the functions
+\dQuote{\code{AIC.dglars}} or \dQuote{\code{BIC.dglars}}.
 
-The output of the summary method is divided in two sections. The first section shows the call that produced the object \code{x} followed by a \code{data.frame}. 
-The column named \code{Sequence} gives us information on how is changed the active set along the path. The column named \code{g} shows the sequence of the \eqn{\gamma} 
-values used to compute the solution curve, while the column \code{Dev} shows the corresponding residual deviance. The remaining columns show the complexity measure, the 
-used measure of goodness-of-fit and the corresponding ranking of the models. Finally, the second section show the estimated coefficients of the best models identified by the used 
-GoF criterion. Like for the \code{print.dglars} method, information about the method, the algorithm and the corresponding convergence are also provided.
+By default, \code{summary.dglars} function computes the AIC criterion, 
+but the user can use \dQuote{\code{dots}} to pass to the function 
+\code{AIC.dglars} the additional arguments needed to compute a more
+general measure of goodness-of-fit, i.e, \dQuote{\code{g}}, 
+\dQuote{\code{phi}}, \dQuote{\code{k}} and \dQuote{\code{complexity}}
+(see \dQuote{\code{\link{AIC.dglars}}} for the description of these 
+arguments). Below we give some examples on how to use these additional
+arguments. 
+
+The output of the summary method is divided in two sections. 
+
+The first section shows the call that produced the object \code{x} 
+followed by a \code{data.frame}. The column named \dQuote{\code{Sequence}}
+gives information on how is changed the active set along the path. 
+The column \dQuote{\code{g}} shows the sequence of the \eqn{\gamma}{g}-values
+used to compute the solution curve, while the column \dQuote{\code{\%Dev}}
+shows the the fraction of explained deviance. The remaining columns 
+show the complexity measure, the used measure of goodness-of-fit 
+and the corresponding ranking of the fitted models. 
+
+The second section shows the details of the selected
+model, i.e. family and link function used to specify the generalized 
+linear model, the penalized estimate of the coefficient vector,
+the value of the tuning parameter, the null and residual deviance, and
+finaly the value of the used measure of goodness-of-fit. Information 
+about the method and the algorithm used to compute the solution curve 
+is also provided.
 }
 \value{
-A list with components \code{table} and \code{b.gof} is silently returned. The \code{table} component is the \code{data.frame} previously described while the
-component \code{b.gof} is the vector of the estimated coefficients corresponding to the best models identified using the GoF criterion.
-Alternatively, the user can use the internal function \code{make_summary_table} to obtain this list (see the example below).
+\code{summary.dglars} function silently returns a named list with components:
+\item{table}{a \code{data.frame} with the information about the sequence 
+of model fitted by \code{dglars} function;}
+\item{formula.gof}{if the model is specified by the formula in \code{dglars}, 
+then the formula of the selected model is reported;}
+\item{b.gof}{the estimates of the coefficients of the selected model;}
+\item{phi.gof}{the estimate of the dispersion parameter of the selected model;}
+\item{nulldev}{the null residual deviance;}
+\item{resdev.gof}{the residual deviance of the selected model;}
+\item{type}{a description of the measure of goodness-of-fit used to select the
+model;}
+\item{k}{the \sQuote{weight} used to compute the measure of goodness-of-fit;}
+\item{complexity}{a description of the method used to measure the complexity
+of the fitted models;}
+\item{phi}{a description of the method used the estimate the dispersion
+parameter.}
 }
-\author{Luigi Augugliaro\cr 
+\author{Luigi Augugliaro and Hassan Pazira\cr 
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \seealso{
-\code{\link{dglars}} and \code{\link{gdf}} functions.
+\code{\link{dglars}}, \code{\link{AIC.dglars}}, \code{\link{BIC.dglars}} and \code{\link{gdf}} functions.
 }
 \examples{
 ###########################
 # Logistic regression model
-
 set.seed(123)
-
 n <- 100
 p <- 10
 X <- matrix(rnorm(n*p), n, p)
 b <- 1:2
-eta <- b[1] + X[,1] * b[2]
+eta <- b[1] + X[, 1] * b[2]
 mu <- binomial()$linkinv(eta)
 y <- rbinom(n, 1, mu)
-fit <- dglars.fit(X, y, family = "binomial")
+fit <- dglars(y ~ X, family = binomial)
 
-## the BIC criterion is used to select the best model
-summary(fit, k= "BIC",complexity = "df")
-## the AIC criterion is used to select the best model
-summary(fit, k= "AIC",complexity = "df")
+summary(fit, type = "AIC")
+summary(fit, type = "AIC", k = 0.1)
+summary(fit, type = "AIC", complexity = "gdf")
+summary(fit, type = "BIC", complexity = "df")
+summary(fit, type = "BIC", complexity = "gdf")
 
-tbl <- make_summary_table(fit, k=log(n), complexity = "df")
-str(tbl)
-summary(fit, complexity = "gdf")
-tbl <- make_summary_table(fit, k=log(n), complexity = "gdf")
-str(tbl)
-
-##########################
-# Poisson regression model
-
+############################
+# y ~ Gamma
 n <- 100
 p <- 10
-X <- matrix(rnorm(n*p), n, p)
-b <- 1:2
-eta <- b[1] + X[,1] * b[2]
-mu <- poisson()$linkinv(eta)
-y <- rpois(n, mu)
-fit <- dglars.fit(X, y, family = "poisson")
+X <- matrix(abs(rnorm(n * p)), n, p)
+eta <- 1 + 2 * X[, 1]
+mu <- drop(Gamma()$linkinv(eta))
+shape <- 0.5
+phi <- 1 / shape
+y <- rgamma(n, scale = mu / shape, shape = shape)
+fit <- dglars(y ~ X, Gamma("log"))
 
-## the BIC criterion is used to select the best model
-summary(fit, k= "BIC",complexity = "df")
-## the AIC criterion is used to select the best model
-summary(fit, k= "AIC",complexity = "df")
-
-tbl <- make_summary_table(fit, k=log(n), complexity = "df")
-str(tbl)
-summary(fit, k=log(n), complexity = "gdf")
+summary(fit, phi = "pearson")
+summary(fit, phi = "deviance")
+summary(fit, phi = "mle")
 }
 \keyword{models}
 \keyword{regression}

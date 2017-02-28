@@ -1,2 +1,34 @@
-useDynLib("dglars")
-exportPattern("^[[:alpha:]]+")
+useDynLib("dglars", .registration = TRUE, .fixes = "C_")
+
+import(Matrix)
+
+export(AIC.dglars, cvdglars, d2mu_de2_mk, dglars_ccd, make_action, make_ru,
+plot.dglars, print.gof_dglars, BIC.dglars, cvdglars.fit, d2th_dmu2_mk,
+dglars_pc, make_coef, make_summary_table, predict.dglars, print.loglik_dglars,
+coef.cvdglars, cvdglars_ccd, dglars, gdf, make_cvdglars, phihat, print.cvdglars,
+setDiff, coef.dglars, cvdglars_pc, dglars.fit, logLik.dglars, make_dglars,
+plot.cvdglars, print.dglars, summary.dglars)
+
+
+importFrom("methods", "as")
+importFrom("stats", "as.formula", "printCoefmat", "update.formula")
+importFrom("stats", "dbinom", "dgamma", "dpois", "dnorm", "dcauchy","qt")
+importFrom("stats", "predict", "logLik", "AIC", "BIC", "glm")
+importFrom("stats", "contrasts", "gaussian", "is.empty.model", "model.matrix", "model.response")
+importFrom("grDevices", "dev.interactive")
+importFrom("graphics", "plot", "points", "segments")
+importFrom("graphics", "abline", "axis", "legend", "matlines", "matplot", "matpoints", "par")
+
+S3method(print, dglars)
+S3method(summary, dglars)
+S3method(plot, dglars)
+S3method(predict, dglars)
+S3method(coef, dglars)
+S3method(logLik, dglars)
+S3method(AIC, dglars)
+S3method(BIC, dglars)
+S3method(print, gof_dglars)
+S3method(print, loglik_dglars)
+S3method(print, cvdglars)
+S3method(coef, cvdglars)
+S3method(plot, cvdglars)

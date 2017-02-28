@@ -1,3 +1,19 @@
+2016-11-17 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.0.0
+	* the package 'Matrix' is used to handle sparce algebra in R.
+	* PC algorithm is extended to inverse gaussian, gamma and gaussian family.
+	* PC algorithm can fit dglars model to glm with standard link functions.
+	* if family is "binomial" then the respnce vector can be a matri with two colums,
+		i.e., the first "column" is the number of successes and the second column is
+		the number of "failures".
+	* added phi_hat subroutines to estimate the dispersion parameter when family is
+		inverse gaussian, gamma or gaussian.
+	* added argument 'unpenalized' to dglars/dglars.fit functions to fit dglars models
+		where a subset of parameters is unpenalized.
+	* added methods functions: coef.dglars, coef.cvdglars, predict.dglars, logLik.dglars,
+		AIC.dglars and BIC.dglars.
+	* improved the output of the method functions: print.dglars, summary.dglars and plot.dglars
+	* gdf function is extended to inverse gaussian, gamma and gaussian family
+
 2014-08-09 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 1.0.5
 	* added reference to Journal of Statistical Software paper
 

@@ -2,22 +2,23 @@
 \alias{dglars-package}
 \docType{package}
 \title{
-Differential geometric LARS (dgLARS) method for some generalized linear models
+Differential Geometric Least Angle Regression
 }
 \description{
-  This package implements the differential geometric extension of the least angle 
-  regression method (Efron et al., 2004) proposed in Augugliaro et al. (2013).
-  Using this version of the package it is possible to compute the dgLARS solution
-  curve for the logistic and Poisson regression models. The solution curve can
-  be computed using two different algorithms, i.e., a predictor-corrector algorithm and a 
-  cyclic coordinate descent algorithm.
+ 	Differential geometric least angle regression method for fitting 
+	sparse generalized linear models. In this version of the package, the user can fit
+	models specifying Gaussian, Poisson, Binomial, Gamma and Inverse Gaussian family. 
+	Furthermore, several link functions can be used to model the relationship between the 
+	conditional expected value of the response variable and the linear predictor. The 
+	solution curve can be computed using an efficient predictor-corrector or a cyclic 
+	coordinate descent algorithm, as described in the paper linked to via the URL below.
 }
 \details{
 \tabular{ll}{
 Package: \tab dglars\cr
 Type: \tab Package\cr
-Version: \tab 1.0.5\cr
-Date: \tab 2014-08-09\cr
+Version: \tab 2.0.0\cr
+Date: \tab 2017-02-24\cr
 License: \tab GPL (>=2)
 }
 }
@@ -25,18 +26,26 @@ License: \tab GPL (>=2)
 Luigi Augugliaro\cr
 Maintainer: Luigi Augugliaro  <luigi.augugliaro@unipa.it>
 }
-\references{Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+\references{
+Augugliaro L., Mineo A.M. and Wit E.C. (2016) <DOI:10.1093/biomet/asw023>
+\emph{A differential-geometric approach to generalized linear models with grouped predictors}, Vol 103(3), 563-577. \url{http://biomet.oxfordjournals.org/content/103/3/563.abstract}.
+
+Augugliaro L., Mineo A.M. and Wit E.C. (2014) <DOI:10.18637/jss.v059.i08>
 \emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
 
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <DOI:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear 
   models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
  
 Augugliaro L., Mineo A.M. and Wit E.C. (2012)
 \emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
 
-Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004)
+Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004) <DOI:10.1214/009053604000000067>
 \emph{Least Angle Regression}, \emph{The Annals of Statistics}, Vol. 32(2), 407-499.
+
+Pazira H., Augugliaro L. and Wit E.C. (2017)
+\emph{Extended differential-geometric LARS for high-dimensional GLMs with general dispersion parameter},
+\emph{Statistics and Computing} (under review).
 }
 \keyword{models}
 \keyword{regression}
