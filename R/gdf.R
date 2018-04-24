@@ -21,7 +21,7 @@ gdf <- function(object){
         mi <- y[, 1] + y[, 2]
         y <- y[, 1]
     } else mi <- rep.int(1, length(y))
-    X <- cBind(1, X)
+    X <- cbind(1, X)
     A <- predict(object, type = "predictors")
     if(fml$family == "binomial"){
         prb <- out_glm$fitted.values

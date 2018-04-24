@@ -1,3 +1,6 @@
+2018-04-12 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.0.1
+    * cBind() is replaced by cbind()
+
 2016-11-17 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.0.0
 	* the package 'Matrix' is used to handle sparce algebra in R.
 	* PC algorithm is extended to inverse gaussian, gamma and gaussian family.

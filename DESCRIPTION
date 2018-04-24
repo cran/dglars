@@ -1,8 +1,8 @@
 Package: dglars
 Type: Package
 Title: Differential Geometric Least Angle Regression
-Version: 2.0.0
-Date: 2017-02-24
+Version: 2.0.1
+Date: 2018-04-24
 Author: Luigi Augugliaro
 Maintainer: Luigi Augugliaro <luigi.augugliaro@unipa.it>
 Imports: methods
@@ -16,8 +16,8 @@ Description: Differential geometric least angle regression method for fitting
 License: GPL (>= 2)
 URL: http://www.jstatsoft.org/v59/i08/.
 LazyLoad: yes
-Depends: Matrix, R (>= 2.10)
+Depends: Matrix, R (>= 3.2)
 NeedsCompilation: yes
 Repository: CRAN
-Packaged: 2017-02-28 08:35:33 UTC; luigiaugugliaro
-Date/Publication: 2017-02-28 11:08:35
+Packaged: 2018-04-24 06:08:10 UTC; luigiaugugliaro
+Date/Publication: 2018-04-24 06:20:49 UTC

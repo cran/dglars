@@ -1,5 +1,5 @@
-ff9723231f9f43b8224db93ee5eff2b2 *ChangeLog
-2de2387bd104d10f93184cae121491a3 *DESCRIPTION
+af4ebc6522cf3a0f2b15e5d94e28fd75 *ChangeLog
+f74eb3246b85f0a54d313f9ba82b3dbd *DESCRIPTION
 e9dcc24a6fc2b49fdbebaef7595a4943 *NAMESPACE
 071d1f3637d6c1bb46ef99c9c2360403 *R/AIC.dglars.R
 74f6c42e8a423865eafdbe2ac12fa7e3 *R/BIC.dglars.R
@@ -15,7 +15,7 @@ e4a0adceab863c0a5928b305ea6edde7 *R/dglars.R
 2c3da6d57ee3981d257ddf251f1eba93 *R/dglars.fit.R
 880859ca043e12ade47381048ebaf3c0 *R/dglars_ccd.R
 a98d3b1ea96511a4368cada2b4bd2246 *R/dglars_pc.R
-5940478b4bdaee90296bf4442811db1e *R/gdf.R
+068c6e4e072c8c81c65f1105c1a0f080 *R/gdf.R
 cb8332a32d7cd31f0e28cb18b747602d *R/logLik.dglars.R
 0b5acdfcc61a1e3cfa9ed5131821e53f *R/make_action.R
 fc22768a086131c2c86b81e8a4b5818a *R/make_coef.R
@@ -26,7 +26,7 @@ a244fcf0ff17e089c5880497eb44a214 *R/make_ru.R
 bef7edb4612d038b284eb8927d6638b0 *R/phihat.R
 dd667866f29dfff4dc8d97839488f11a *R/plot.cvdglars.R
 c5a45614b1854ad8e17906879ec7b71c *R/plot.dglars.R
-3141e0f2b952bd0344837333492b0a6a *R/predict.dglars.R
+18327dbb167bcd52520ea3a94c859e8a *R/predict.dglars.R
 f5b0da9c97b31d6408f4c8f822c6156b *R/print.cvdglars.R
 9ef18a1ba8aaf884b208ceb62ae1feb6 *R/print.dglars.R
 213e0f679aa65ee3fabed0c328f6b39e *R/print.gof_dglars.R
@@ -45,7 +45,7 @@ c9ff9eaba64a8455a5f0e4ca22eab883 *man/coef.cvdglars.Rd
 40357410c161b5609116f74f1ede75f8 *man/coef.dglars.Rd
 e125ae256780af720d90a43e993b923d *man/cvdglars.Rd
 f4b6368a63259214f352a920b395e563 *man/dglars-internal.Rd
-76a93c5f3dd8357fa6e9f97989d3a775 *man/dglars-package.Rd
+60e8d86e70b782351e39a7a40a47f42e *man/dglars-package.Rd
 a61726caed722848e786903ef894c05e *man/dglars.Rd
 73abcd70d659682758ac42dedaa105c3 *man/duke.Rd
 2bca00afb3cf28c29160e5e5e5258ea4 *man/gdf.Rd

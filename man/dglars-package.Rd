@@ -17,8 +17,8 @@ Differential Geometric Least Angle Regression
 \tabular{ll}{
 Package: \tab dglars\cr
 Type: \tab Package\cr
-Version: \tab 2.0.0\cr
-Date: \tab 2017-02-24\cr
+Version: \tab 2.0.1\cr
+Date: \tab 2018-04-24\cr
 License: \tab GPL (>=2)
 }
 }

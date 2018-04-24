@@ -164,7 +164,7 @@ predict.dglars <- function(object, xnew, ynew, g = NULL, type = c("coefficients"
         names(predictors) <- g
         return(predictors)
     }
-    eta <- cBind(1, xnew) %*% beta
+    eta <- cbind(1, xnew) %*% beta
     if(type == "eta") return(eta)
     mu <- object$family$linkinv(as(eta, "matrix"))
     if(type == "mu"){
