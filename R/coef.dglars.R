@@ -1,9 +1,8 @@
-coef.dglars <- function(object, type = c("pearson", "deviance", "mle"), ...){
+coef.dglars <- function(object, type = c("pearson", "deviance", "mle", "grcv"), g = NULL, ...){
     type <- match.arg(type)
-    dots <- list(...)
-    out <- predict(object, g = dots$g, type = "coefficients")
-    if(type != "pearson") out$phi <- phihat(object, type = type, g = dots$g)
-    out$g <- if(is.null(dots$g)) object$g
-                else dots$g
+    out <- predict(object, g = g, type = "coefficients")
+    if(type != "pearson") out$phi <- phihat(object, type = type, g = g, ...)
+    out$g <- if(is.null(g)) object$g
+                else g
     out
 }

@@ -16,6 +16,6 @@ cvdglars <- function(formula, family = gaussian, g, unpenalized, b_wght, data, s
 	X <- X[, -1, drop = FALSE]
 	fit <- cvdglars.fit(X = X, y = y, family = family, g = g, unpenalized = unpenalized, b_wght = b_wght, control = control)
 	fit$call <- this.call
-	fit$formula <- update(formula, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
+	fit$formula_cv <- update(formula, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
 	fit
 }

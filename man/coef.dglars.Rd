@@ -1,36 +1,40 @@
 \name{coef.dglars}
 \alias{coef.dglars}
+
 \title{Extract the dgLARS Coefficient Path}
-\description{\code{coef.dglars} is used to extract the coefficient path 
-computed by dgLARS method.}
+
+\description{\code{coef.dglars} is used to extract the coefficient path computed by dgLARS method.}
+
 \usage{
-\method{coef}{dglars}(object, type = c("pearson", "deviance", "mle"), 
-\dots)
+\method{coef}{dglars}(object, type = c("pearson", "deviance", "mle", "grcv"),
+g = NULL, \dots)
 }
+
 \arguments{
 \item{object}{fitted \code{dglars} object.}
 \item{type}{a description of the estimator used for the dispersion parameter.}
-\item{\dots}{this is the argument by means of to pass
-the argument \code{g} to \code{predict.dglars} and \code{phihat}.}
+\item{g}{vector of values of the tuning parameter.}
+\item{\dots}{further arguments passed to the function \code{link{grcv}}.}
 }
+
 \details{
-\code{coef.dglars} is a wrapper function calling \dQuote{\code{\link{predict.dglars}}}
-and \dQuote{\code{\link{phihat}}}. By default, this function returns the sequence of
-the penalized coefficients and the sequence of the penalized estimate of the dispersion
-parameter \eqn{\phi}{phi}; by using the argument \dQuote{\code{\dots}}, the user can obtain
-the prediction of the estimates for any value of the tuning parameter (see the example below).
+\code{coef.dglars} is a wrapper function calling \dQuote{\code{\link{predict.dglars}}} and \dQuote{\code{\link{phihat}}}. By default, this function returns the sequence of the penalized coefficients and the sequence of the penalized estimate of the dispersion parameter \eqn{\phi}{phi}. The user can specify the argumnets of the function \code{\link{grcv}} by the argument \code{\dots}).
 }
+
 \value{
 \code{coef.dglars} returns a named list with component:
 \item{beta}{the sequence of the penalized estimates of the regression coefficients;}
 \item{phi}{the penalized estimates of the dispersion parameter;}
 \item{g}{the vector of the values of the tuning parameter.}
 }
+
 \author{Luigi Augugliaro\cr 
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
+
 \seealso{
-\code{\link{predict.dglars}} and \code{\link{phihat}}.
+\code{\link{predict.dglars}}, \code{\link{phihat}} and \code{\link{grcv}}.
 }
+
 \examples{
 ###########################
 # Logistic regression model

@@ -1,10 +1,13 @@
 \name{cvdglars}
 \alias{cvdglars}
 \alias{cvdglars.fit}
+
 \title{Cross-Validation Method for dgLARS}
+
 \description{
 Uses the \eqn{k}-fold cross-validation deviance to estimate the solution point of the dgLARS solution curve.
 }
+
 \usage{
 cvdglars(formula, family = gaussian, g, unpenalized, 
 b_wght, data, subset, contrast = NULL, control = list())
@@ -12,6 +15,7 @@ b_wght, data, subset, contrast = NULL, control = list())
 cvdglars.fit(X, y, family = gaussian, g, unpenalized,
 b_wght, control = list())
 }
+
 \arguments{
 \item{formula}{an object of class \dQuote{\code{\link{formula}}}:
 a symbolic description of the model to be fitted. When the

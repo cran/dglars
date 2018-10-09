@@ -77,7 +77,6 @@ gdf <- function(object){
                             else a <- c(1, 1 + A[[id]])
                             X_A <- X[, a]
                             I <- crossprod(wght1[, id] * X_A)
-                            #J <- crossprod(sqrt(wght2[, id]) * X_A)
                             J <- crossprod(X_A, wght2[, id] * X_A)
                             M <- solve(J, I)
                             sum(diag(M))

@@ -8,8 +8,8 @@ make_summary_table <- function(object, type, ...){
     compl <- out_gof$comp
     gof <- out_gof$val
     rank.gof <- rank(gof)
-    best <- rank.gof == 1
-    b <- object$beta
+    best <- which(rank.gof == 1)
+    b <- as.matrix(object$beta)
     b.gof <- b[, best]
     names(b.gof)[1] <- "1"
     b.gof <- b.gof[abs(b.gof) > 0]
@@ -28,6 +28,6 @@ make_summary_table <- function(object, type, ...){
     names(tbl)[3] <- "%Dev"
     names(tbl)[4] <- out_gof$complexity
     names(tbl)[5] <- out_gof$type
-    list(table = tbl, formula.gof = formula.gof, b.gof = b.gof, phi.gof = object$phi[best], g.gof = g.gof, nulldev = dev[1],
+    list(table = tbl, formula.gof = formula.gof, b.gof = b.gof, phi.gof = out_gof$phih[best], g.gof = g.gof, nulldev = dev[1],
         resdev.gof = dev[best], type = out_gof$type, k = out_gof$k, complexity = out_gof$complexity, phi = out_gof$phi)
 }

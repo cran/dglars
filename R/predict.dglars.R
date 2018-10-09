@@ -19,19 +19,19 @@ predict.dglars <- function(object, xnew, ynew, g = NULL, type = c("coefficients"
         stop("'y' of class ", sQuote(class(object$y)), " while the class of the argument 'ynew' is ", sQuote(class(ynew)))
     }
     X <- object$X
-    n <- dim(X)[1]
-    p <- dim(X)[2]
+    n <- dim(X)[1L]
+    p <- dim(X)[2L]
     y <- object$y
     if(is.matrix(y)){
         if(!is.null(colnames(y))) name_class <- colnames(y)
         else name_class <- c("Y1", "Y2")
-        mi <- y[, 1] + y[, 2]
-        y <- y[, 1]
+        mi <- y[, 1L] + y[, 2L]
+        y <- y[, 1L]
     } else {
         mi <- rep(1, n)
         if(is.factor(y)) {
             name_class <- levels(y)[2:1]
-            y <- as.numeric(y) - 1
+            y <- as.numeric(y) - 1L
         } else name_class <- c(1, 0)
     }
     if(missing(xnew)) xnew <- X

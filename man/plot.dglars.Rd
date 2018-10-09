@@ -1,12 +1,16 @@
 \name{plot.dglars}
 \alias{plot.dglars}
+
 \title{Plot from a dglars Object}
+
 \description{
 Produces plots to study the sequence of models identified by dgLARS method.
 }
+
 \usage{
 \method{plot}{dglars}(x, type = c("both", "AIC", "BIC"), ...)
 }
+
 \arguments{
 \item{x}{fitted \code{dglars} object.}
 

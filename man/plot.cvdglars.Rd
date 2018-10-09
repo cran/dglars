@@ -1,6 +1,8 @@
 \name{plot.cvdglars}
 \alias{plot.cvdglars}
+
 \title{Plot from a cvdglars Object}
+
 \description{
 Plots the cross-validation curve, and upper and lower standard deviation curves, 
 as a function of the used \eqn{\gamma}{g} values.

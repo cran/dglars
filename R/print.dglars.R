@@ -8,7 +8,7 @@ print.dglars <- function (x, digits = max(3, getOption("digits") - 3), ...){
 	names(tbl) <- c("Sequence","g","Dev","%Dev","n. non zero")
 	if(x$np>1){
 		id <- which(action != "")
-		n.tbl <- dim(tbl)[1]
+		n.tbl <- dim(tbl)[1L]
 		n.space <- length(id)
 		id.tbl <- vector(length = n.tbl + n.space, mode = "numeric")
 		id.space <- id + seq(1,n.space)

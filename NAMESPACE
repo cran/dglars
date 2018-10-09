@@ -7,13 +7,12 @@ plot.dglars, print.gof_dglars, BIC.dglars, cvdglars.fit, d2th_dmu2_mk,
 dglars_pc, make_coef, make_summary_table, predict.dglars, print.loglik_dglars,
 coef.cvdglars, cvdglars_ccd, dglars, gdf, make_cvdglars, phihat, print.cvdglars,
 setDiff, coef.dglars, cvdglars_pc, dglars.fit, logLik.dglars, make_dglars,
-plot.cvdglars, print.dglars, summary.dglars)
-
+plot.cvdglars, print.dglars, summary.dglars, grcv)
 
 importFrom("methods", "as")
-importFrom("stats", "as.formula", "printCoefmat", "update.formula")
+importFrom("stats", "as.formula", "printCoefmat", "update.formula", "median")
 importFrom("stats", "dbinom", "dgamma", "dpois", "dnorm", "dcauchy","qt")
-importFrom("stats", "predict", "logLik", "AIC", "BIC", "glm")
+importFrom("stats", "predict", "logLik", "AIC", "BIC", "glm", "coef", "residuals.glm")
 importFrom("stats", "contrasts", "gaussian", "is.empty.model", "model.matrix", "model.response")
 importFrom("grDevices", "dev.interactive")
 importFrom("graphics", "plot", "points", "segments")

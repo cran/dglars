@@ -1,7 +1,7 @@
 dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control = list()){
 	this.call <- match.call()
 	if(is.data.frame(X)) X <- as.matrix(X)
-	if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
+    if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
 	if(missing(unpenalized)){
 		unpenalized <- 0
 		nup <- 0
@@ -181,27 +181,27 @@ dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control 
 	fit$y <- y
     switch(as.character(fit$conv),
         "1" = warning("\n\nAn error in the predictor step occurred at the step ", fit$np + 1, ".\n\nSuggestions:\n",
-        			paste("\ttry increasing the control parameter 'nNR' (actual setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
-        			paste("\ttry with a different value of the control parameter 'dg_max' (actual setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
-        			paste("\ttry increasing the control parameter 'g0' (actual setting is g0 = ",fit$control$g0, ")", sep = ""),
+        			paste("\ttry increasing the control parameter 'nNR' (current setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
+        			paste("\ttry with a different value of the control parameter 'dg_max' (current setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
+        			paste("\ttry increasing the control parameter 'g0' (current setting is g0 = ",fit$control$g0, ")", sep = ""),
         			ifelse(fit$np == 1,
                     	"\n\nThe solution at the first step is reported\n",
                     	paste("\n\nThe solution of the first", fit$np, "steps is reported"))),
         "2" = warning("\n\nAn error in the corrector step occurred at the step ", fit$np + 1, ".\n\nSuggestions:\n",
-        			paste("\ttry increasing the control parameter 'nNR' (actual setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
-        			paste("\ttry with a different value of the control parameter 'dg_max' (actual setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
-        			paste("\ttry increasing the control parameter 'g0' (actual setting is g0 = ",fit$control$g0, ")", sep = ""),
+        			paste("\ttry increasing the control parameter 'nNR' (current setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
+        			paste("\ttry with a different value of the control parameter 'dg_max' (current setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
+        			paste("\ttry increasing the control parameter 'g0' (current setting is g0 = ",fit$control$g0, ")", sep = ""),
         			ifelse(fit$np == 1,
                     	"\n\nThe solution at the first step is reported\n",
                     	paste("\n\nThe solution of the first", fit$np, "steps is reported"))),
         "3" = warning("\n\nMaximum number of iterations reached at the step ", fit$np + 1,".\n\nSuggestions:\n",
                 ifelse(fit$control$algorithm == "pc",
-                    paste("\ttry increasing the control parameter 'nNR' (actual setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
-                    paste("\ttry increasing the control parameter 'nccd' (actual setting is nccd = ",fit$control$nccd, ")\n", sep = "")),
+                    paste("\ttry increasing the control parameter 'nNR' (current setting is nNR = ",fit$control$nNR, ")\n", sep = ""),
+                    paste("\ttry increasing the control parameter 'nccd' (current setting is nccd = ",fit$control$nccd, ")\n", sep = "")),
                 ifelse(fit$control$algorithm == "pc",
-                    paste("\ttry with a different value of the control parameter 'dg_max' (actual setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
-                    paste("\ttry reducing the control parameter 'np' (actual setting is np = ", fit$control$np, ")\n", sep = "")),
-                paste("\ttry increasing the control parameter 'g0' (actual setting is g0 = ",fit$control$g0, ")", sep = ""),
+                    paste("\ttry with a different value of the control parameter 'dg_max' (current setting is dg_max = ",fit$control$dg_max, ")\n", sep = ""),
+                    paste("\ttry reducing the control parameter 'np' (current setting is np = ", fit$control$np, ")\n", sep = "")),
+                paste("\ttry increasing the control parameter 'g0' (current setting is g0 = ",fit$control$g0, ")", sep = ""),
                 ifelse(fit$np == 1,
                     "\n\nThe solution at the first step is reported\n",
                     paste("\n\nThe solution of the first", fit$np, "steps is reported"))),
@@ -218,7 +218,7 @@ dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control 
                     "\n\nThe solution at the first step is reported\n",
                     paste("\n\nThe solution of the first", fit$np, "steps is reported"))),
          "7" =  warning("\n\nMaximum number of solution points reached.\n\nSuggestions:\n",
-         			paste("\ttry to increase the control parameter 'np' (actual setting is np = ",fit$control$np, ")", sep = ""))
+         			paste("\ttry to increase the control parameter 'np' (current setting is np = ",fit$control$np, ")", sep = ""))
     )
 	fit
 }

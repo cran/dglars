@@ -1,6 +1,6 @@
 summary.dglars <- function(object, type = c("AIC", "BIC"), digits = max(3, getOption("digits") - 3), ...){
 	if(class(object)[1] != "dglars")
-	stop("summary method is not yet available for objects with class 'cvdglars'")
+        stop("summary method is not yet available for objects with class 'cvdglars'")
     if(is.character(type)) type <- match.arg(type)
     else stop("'type' argument is not a string specifying 'AIC or 'BIC'")
     tbl <- make_summary_table(object, type, ...)

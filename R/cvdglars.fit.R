@@ -1,7 +1,7 @@
 cvdglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control = list()){
 	this.call <- match.call()
 	if(is.data.frame(X)) X <- as.matrix(X)
-	if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
+    if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
 	if(missing(unpenalized)){
 		unpenalized <- 0
 		nup <- 0
