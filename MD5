@@ -1,5 +1,5 @@
-8d4b108013170c2e04444ef0f4686174 *ChangeLog
-fb23f3e5b3ca371abe9edde26815344b *DESCRIPTION
+ae90974c767e2758cfa1a07ab468229d *ChangeLog
+a170181cd408f8654731150c7e1123ef *DESCRIPTION
 2c8b48af4dd31c66d2f44aacffb87212 *NAMESPACE
 6f33de887e28148af8587450070830e5 *R/AIC.dglars.R
 2228b8cceb54976f0e7cd7944e144292 *R/BIC.dglars.R
@@ -17,7 +17,7 @@ e4a0adceab863c0a5928b305ea6edde7 *R/dglars.R
 a98d3b1ea96511a4368cada2b4bd2246 *R/dglars_pc.R
 67b103edc7556454051fbb862614d83b *R/gdf.R
 09668528f8dcc2535afd30c246afbe1d *R/grcv.R
-a8d02bfd4a0656250df0e7251b3f58df *R/logLik.dglars.R
+ac9cc8d5cd6aef966d0305dfa03ea3c0 *R/logLik.dglars.R
 0b5acdfcc61a1e3cfa9ed5131821e53f *R/make_action.R
 fc22768a086131c2c86b81e8a4b5818a *R/make_coef.R
 887ea80a4eeb3848cf33ae3421ff5463 *R/make_cvdglars.R
@@ -46,7 +46,7 @@ b4d7ef3f83bb9c9d2bb316452f228ca9 *man/breast.Rd
 85d3dcefdc45763ae9ae08639a857147 *man/coef.dglars.Rd
 a68372d86657aa74c69576b99f63216b *man/cvdglars.Rd
 f4b6368a63259214f352a920b395e563 *man/dglars-internal.Rd
-aea048b8a05a7c533de84eeeb264cfac *man/dglars-package.Rd
+fdf2ce57d98d59b58f35c3e292f1a4d7 *man/dglars-package.Rd
 a61726caed722848e786903ef894c05e *man/dglars.Rd
 73abcd70d659682758ac42dedaa105c3 *man/duke.Rd
 2bca00afb3cf28c29160e5e5e5258ea4 *man/gdf.Rd

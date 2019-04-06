@@ -32,7 +32,7 @@ logLik.dglars <- function(object, phi = c("pearson", "deviance", "mle", "grcv"),
         }
     } else phih <- rep(1, ifelse(is.null(g), length(object$g), length(g)))
     if(family_used == "gaussian")
-    	val <- -n * 0.5 * log(2 * pi * phih) - dev / (2 * phi)
+    	val <- -n * 0.5 * log(2 * pi * phih) - dev / (2 * phih)
     if(family_used == "binomial")
         val <- apply(prob, 2, function(prb) sum(dbinom(y, mi, prb, log = TRUE)))
     if(family_used == "poisson")

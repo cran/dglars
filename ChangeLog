@@ -1,3 +1,6 @@
+2019-04-06 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.1
+    * fixed bug in logLik.dglars
+
 2018-10-09 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.0
     * added "grcv" function to estimate the dispersion parameter
     * fixed bug in cvdglars
