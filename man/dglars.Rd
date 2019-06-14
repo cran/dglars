@@ -264,7 +264,7 @@ to the algorithm used to fit the model. The values returned are:
 \references{
 Augugliaro L., Mineo A.M. and Wit E.C. (2016)
 \emph{A differential-geometric approach to generalized linear models with grouped predictors}, 
-\emph{Biometrika}, Vol 103(3), 563-577. \url{http://biomet.oxfordjournals.org/content/103/3/563.abstract}.
+\emph{Biometrika}, Vol 103(3), 563-577.
 	
 Augugliaro L., Mineo A.M. and Wit E.C. (2014)
 \emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.

@@ -82,12 +82,12 @@ F77_SUB(pc_invgaus_g)(int *linkid, int *n, int *p, double *X, double *y, int *nu
                       int *conv);
 
 void
-F77_SUB(pc_cvdglars)(int *familyid, int *linkid, int *n, int *p, double *X, double *y,
-                     double *mi, int *nup, int *A, double *w, int *foldid, int *nfold,
-                     int *ng, double *g, double *b, double *phi, double *dev_m,
-                     double *, double *dev_v, double *g_hat, int *nv, int *mthd, double *g0,
-                     double *dg_max, double *eps,int *np,int *ncrct, double *cf,
-                     double *NReps, int *nNR, int *conv);
+F77_SUB(pc_cvdglars)(int *familyid, int *linkid, int *n, int *p, double *X,
+                     double *y, double *mi, int *nup, int *A, double *w,
+                     int *foldid, int *nfold, int *ng, double *g, double *b,
+                     double *phi, double *dev_m, double *dev_v, double *g_hat, int *nv,
+                     int *mthd, double *g0, double *dg_max, double *eps, int *np,
+                     int *ncrct, double *cf, double *NReps, int *nNR, int *conv);
                      
 void
 F77_SUB(ccd_pois_c)(int *n, int *p, double *X, double *y, int *nup, double *w, int *np,

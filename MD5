@@ -1,5 +1,5 @@
-ae90974c767e2758cfa1a07ab468229d *ChangeLog
-a170181cd408f8654731150c7e1123ef *DESCRIPTION
+3cca69ae430fe1b6bf6970bb938dad53 *ChangeLog
+198d5e20f7bc85cee35e53368a174bb5 *DESCRIPTION
 2c8b48af4dd31c66d2f44aacffb87212 *NAMESPACE
 6f33de887e28148af8587450070830e5 *R/AIC.dglars.R
 2228b8cceb54976f0e7cd7944e144292 *R/BIC.dglars.R
@@ -46,8 +46,8 @@ b4d7ef3f83bb9c9d2bb316452f228ca9 *man/breast.Rd
 85d3dcefdc45763ae9ae08639a857147 *man/coef.dglars.Rd
 a68372d86657aa74c69576b99f63216b *man/cvdglars.Rd
 f4b6368a63259214f352a920b395e563 *man/dglars-internal.Rd
-fdf2ce57d98d59b58f35c3e292f1a4d7 *man/dglars-package.Rd
-a61726caed722848e786903ef894c05e *man/dglars.Rd
+595121e5333e0b56fedb7935265562b3 *man/dglars-package.Rd
+c9b6f235b44eb621db0101ed615cd102 *man/dglars.Rd
 73abcd70d659682758ac42dedaa105c3 *man/duke.Rd
 2bca00afb3cf28c29160e5e5e5258ea4 *man/gdf.Rd
 e9b5123757d0f59eab2b7775c9be7d94 *man/grcv.Rd
@@ -63,7 +63,7 @@ de6fb5edab20fc1c89a291fe825bee9e *man/summary.dglars.Rd
 4716656f5406f2707c98565f1c3311ef *src/ccd_bin_c.f90
 cb98e5576f6cadf90dd9e5dd248c3923 *src/ccd_cvdglars.f90
 b335eab6dfb26342f2b4cf19aa0f9e26 *src/ccd_pois_c.f90
-41ed12230e5a530bc87cf4c22bb74cbe *src/dglars.h
+93b770439e441a3e120f8cb5af0220bb *src/dglars.h
 e02ed9543af287c88028075470d5d336 *src/init.c
 83a0b4a9df020717de6b0b40f370bcea *src/pc_bin_c.f90
 0517dcf3e90eed1a01d91b7ce36fb4da *src/pc_bin_g.f90
