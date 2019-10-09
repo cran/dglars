@@ -39,7 +39,7 @@ eps,np,ncrct,cf,NReps,nNR,conv)
                                         nup,w_cv,b_cv,phi_cv,ru_cv,dev,A_cv,nv,nav,nnonzero,g_seq,mthd,g0,2.d0,dg_max,&
                                         eps,np_cv,ncrct,cf,NReps,nNR,conv(i))
                 else
-                    call pc_bin_c(linkid,n-lfold,p,X(foldid(lfold+1:n),:),y(foldid(lfold+1:n)),mi(foldid(lfold+1:n)),&
+                    call pc_bin_g(linkid,n-lfold,p,X(foldid(lfold+1:n),:),y(foldid(lfold+1:n)),mi(foldid(lfold+1:n)),&
                                         nup,w_cv,b_cv,phi_cv,ru_cv,dev,A_cv,nv,nav,nnonzero,g_seq,mthd,g0,2.d0,dg_max,&
                                         eps,np_cv,ncrct,cf,NReps,nNR,conv(i))
                 end if
