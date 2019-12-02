@@ -25,15 +25,15 @@ phihat(object, type = c("pearson", "deviance", "mle", "grcv"), g = NULL, \dots)
 \value{\code{phihat} returns a vector with the estimates of the dispersion parameter.}
 
 \references{
-Cordeiro G. M. and McCullagh P. (1991) <DOI: 10.2307/2345592>
+Cordeiro G. M. and McCullagh P. (1991) <doi:10.2307/2345592>
 Bias Correction in Generalized Linear Models,
 \emph{Journal of the Royal Statistical Society. Series B.}, Vol 53(3), 629--643.
 
-Jorgensen B. (1997)
+Jorgensen B. (1997, ISBN:0412997188)
 \emph{The Theory of Dispersion Models},
 Chapman \& Hall, Great Britain.
 
-Pazira H., Augugliaro L. and Wit E.C. (2018) <DOI: 10.1007/s11222-017-9761-7>
+Pazira H., Augugliaro L. and Wit E.C. (2018) <doi:10.1007/s11222-017-9761-7>
 Extended differential-geometric LARS for high-dimensional GLMs with general dispersion parameter,
 \emph{Statistics and Computing}, Vol 28(4), 753-774.
 }

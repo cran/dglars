@@ -56,13 +56,13 @@ In order to summarize the information about the AIC-valuse, a \code{print} metho
 }
 
 \references{
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, 
 \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
 
-Sakamoto, Y., Ishiguro, M., and Kitagawa G. (1986).
+Sakamoto, Y., Ishiguro, M., and Kitagawa G. (1986, ISBN:978-90-277-2253-9)
 \emph{Akaike Information Criterion Statistics}.
-D. Reidel Publishing Company.
+KTK Scientific Publishers, 1986.
 }
 
 \author{Luigi Augugliaro\cr 

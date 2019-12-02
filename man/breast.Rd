@@ -15,9 +15,11 @@ The experiment was conducted by the Dr.\ John Bartlett and Dr.\ Caroline Witton 
 \source{Dr. John Bartlett and Dr. Caroline Witton, Division of Cancer Sciences and Molecular Pathology, University of Glasgow, Glasgow Royal Infirmary.
 }
 \references{
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
 
-Wit E.C. and McClure J. (2004) "Statistics for Microarrays: Design, Analysis and Inference" Chichester: Wiley.
+Wit E.C. and McClure J. (2004, ISBN:978-0-470-84993-4)
+"Statistics for Microarrays: Design, Analysis and Inference"
+Chichester: Wiley.
 }
 \keyword{datasets}

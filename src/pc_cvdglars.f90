@@ -81,7 +81,8 @@ eps,np,ncrct,cf,NReps,nNR,conv)
             dev_m = dev_m + dev_cv
             dev_v = dev_v + dev_cv**2
         end if
-        foldid = cshift(foldid, lfold)
+        call shift_vec(n,foldid,lfold)
+        !foldid = cshift(foldid, lfold)
     end do
     if(denom.le.1) return
     dev_m = dev_m / denom

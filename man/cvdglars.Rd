@@ -10,7 +10,7 @@ Uses the \eqn{k}-fold cross-validation deviance to estimate the solution point o
 
 \usage{
 cvdglars(formula, family = gaussian, g, unpenalized, 
-b_wght, data, subset, contrast = NULL, control = list())
+b_wght, data, subset, contrasts = NULL, control = list())
 
 cvdglars.fit(X, y, family = gaussian, g, unpenalized,
 b_wght, control = list())
@@ -51,7 +51,7 @@ variables are taken from \sQuote{environment(formula)}.}
 \item{subset}{an optional vector specifying a subset of observations
 to be used in the fitting process.}
     	
-\item{contrast}{an optional list. See the \sQuote{contrasts.arg} of
+\item{contrasts}{an optional list. See the \sQuote{contrasts.arg} of
 \sQuote{model.matrix.default}.}
     	
 \item{control}{a list of control parameters. See \sQuote{Details}.}
@@ -215,14 +215,11 @@ related to the algorithm used to fit the dgLARS solution curve. The values retur
 \item{control}{the list of control parameters used to compute the cross-validation deviance.}
 }
 \references{
-Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+Augugliaro L., Mineo A.M. and Wit E.C. (2014) <doi:10.18637/jss.v059.i08>
 \emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
 
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
-
-Augugliaro L., Mineo A.M. and Wit E.C. (2012)
-\emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
 }
 \author{Luigi Augugliaro\cr 
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}

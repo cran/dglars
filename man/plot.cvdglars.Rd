@@ -22,6 +22,7 @@ standard deviation curves. A vertical dashed red line is used the indetify the v
 of the \eqn{\gamma}{g} parameter corresponding to the minimum of the cross-validation
 deviance.
 }
+
 \author{Luigi Augugliaro\cr 
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}\seealso{
 \code{\link{cvdglars}} function.

@@ -23,19 +23,21 @@ implements the estimator proposed in Augugliaro et al. (2013).
 }
 \value{
 \code{gdf} returns a vector of length \code{np} with the generalized degrees-of-freedom.}
+
 \references{
-Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+Augugliaro L., Mineo A.M. and Wit E.C. (2014) <doi:10.18637/jss.v059.i08>
 \emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, 
 \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
 
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, 
 \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
 
-Efron B. (2004)
+Efron B. (2004) <doi:10.1198/016214504000000692>
 \emph{The estimation of prediction error: covariance penalties and cross-validation}, 
 \emph{Journal of the American Statistical Association}, Vol. 99(467), 619-632.
 }
+
 \author{Luigi Augugliaro and Hassan Pazira\cr 
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}
 \seealso{

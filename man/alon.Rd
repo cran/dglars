@@ -11,7 +11,7 @@ Two thousand out of around 6500 genes were selected based on the confidence in t
 }
 \usage{data(alon)}
 \references{
-Alon U., Barkai N., Notterman D.A., Gish K., Ybarra S., Mack D. and Levine A.J. (1999) 
+Alon U., Barkai N., Notterman D.A., Gish K., Ybarra S., Mack D. and Levine A.J. (1999) <doi:10.1073/pnas.96.12.6745>
 \emph{Broad patterns of gene expression revealed by clustering analysis of tumor and normal colon tissue probed by oligonucleotide arrays.} \emph{Proc. Natl. Acad. Sci. USA} \bold{96}, 6745-6750
 }
 \keyword{datasets}

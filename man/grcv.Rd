@@ -42,7 +42,7 @@ In order to reduce the random variabilty due to the splitting of the dataset (St
 \value{\code{grcv} returns the estimate of the dispersion parameter.}
 
 \references{
-Pazira H., Augugliaro L. and Wit E.C. (2018) <DOI: 10.1007/s11222-017-9761-7>
+Pazira H., Augugliaro L. and Wit E.C. (2018) <doi:10.1007/s11222-017-9761-7>
 \emph{Extended differential-geometric LARS for high-dimensional GLMs with general dispersion parameter},
 \emph{Statistics and Computing}, Vol 28(4), 753-774.
 }

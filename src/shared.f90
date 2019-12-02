@@ -242,6 +242,13 @@ if(action .eq. -1) then
 end if
 end subroutine shift_A
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+subroutine shift_vec(n,x,k)
+integer ::n,x(n),k,tmp(k)
+tmp = x(1:k)
+x(1:(n - k)) = x((k + 1):n)
+x((n - k + 1):n) = tmp
+end subroutine shift_vec
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 subroutine    solve(nba,Drua,dba,conv)
 integer    ::    nba,ipiv(nba),conv
 integer,    parameter    ::    p=1

@@ -34,6 +34,7 @@ plot.dglars <- function(x, type = c("both", "AIC", "BIC"), ...){
     axis(1)
     axis(2)
     op <- par(ask = dev.interactive())
+    on.exit(par(op))
     #Coefficients Path
     ylim <- range(beta[-1,])
     min.gof <- seq(from = ylim[1], to = ylim[2], length = 5)
@@ -45,6 +46,7 @@ plot.dglars <- function(x, type = c("both", "AIC", "BIC"), ...){
     axis(1)
     axis(2)
     op <- par(ask=dev.interactive())
+    on.exit(par(op))
     #Rao Score Path
     ru <- t(x$ru)
     ylim <- range(ru)
@@ -56,5 +58,4 @@ plot.dglars <- function(x, type = c("both", "AIC", "BIC"), ...){
     legend("topright", legend = gof_name, pch = setting$pch, col = 2, bty = "n")
     axis(1)
     axis(2)
-    par(op)
 }

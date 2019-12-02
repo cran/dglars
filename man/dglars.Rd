@@ -7,7 +7,7 @@
 }
 \usage{
 dglars(formula, family = gaussian, g, unpenalized, 
-b_wght, data, subset, contrast = NULL, control = list())
+b_wght, data, subset, contrasts = NULL, control = list())
 
 dglars.fit(X, y, family = gaussian, g, unpenalized, 
 b_wght, control = list())
@@ -48,7 +48,7 @@ variables are taken from \sQuote{environment(formula)}.}
 \item{subset}{an optional vector specifying a subset of observations
 to be used in the fitting process.}
     	
-\item{contrast}{an optional list. See the \sQuote{contrasts.arg} of
+\item{contrasts}{an optional list. See the \sQuote{contrasts.arg} of
 \sQuote{model.matrix.default}.}
     	
 \item{control}{a list of control parameters. See \sQuote{Details}.}
@@ -262,28 +262,25 @@ to the algorithm used to fit the model. The values returned are:
 \item{control}{the list of control parameters used to compute the dgLARS solution curve.}
 }
 \references{
-Augugliaro L., Mineo A.M. and Wit E.C. (2016)
+Augugliaro L., Mineo A.M. and Wit E.C. (2016) <doi:10.1093/biomet/asw023>
 \emph{A differential-geometric approach to generalized linear models with grouped predictors}, 
 \emph{Biometrika}, Vol 103(3), 563-577.
 	
-Augugliaro L., Mineo A.M. and Wit E.C. (2014)
+Augugliaro L., Mineo A.M. and Wit E.C. (2014) <doi:10.18637/jss.v059.i08>
 \emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
 
-Augugliaro L., Mineo A.M. and Wit E.C. (2013)
+Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.
 
-Augugliaro L., Mineo A.M. and Wit E.C. (2012)
-\emph{Differential geometric LARS via cyclic coordinate descent method}, in \emph{Proceeding of COMPSTAT 2012}, pp. 67-79. Limassol, Cyprus.
-
-Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004)
+Efron B., Hastie T., Johnstone I. and Tibshirani R. (2004) <doi:10.1214/009053604000000067>
 \emph{Least Angle Regression}, \emph{The Annals of Statistics}, Vol. 32(2), 407-499.
 
-Friedman J., Hastie T. and Tibshirani R. (2010) 
+Friedman J., Hastie T. and Tibshirani R. (2010) <doi:10.18637/jss.v033.i01>
 \emph{Regularization Paths for Generalized Linear Models via Coordinate Descent}, \emph{Journal of Statistical Software}, Vol. 33(1), 1-22.
 
-Pazira H., Augugliaro L. and Wit E.C. (2017)
+Pazira H., Augugliaro L. and Wit E.C. (2018) <doi:10.1007/s11222-017-9761-7>
 \emph{Extended di erential geometric LARS for high-dimensional GLMs with general dispersion parameter},
-\emph{Statistics and Computing} (under review).
+\emph{Statistics and Computing}, Vol. 28(4), 753-774.
 }
 \author{Luigi Augugliaro and Hassan Pazira\cr
 Maintainer: Luigi Augugliaro \email{luigi.augugliaro@unipa.it}}

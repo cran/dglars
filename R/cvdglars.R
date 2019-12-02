@@ -1,4 +1,4 @@
-cvdglars <- function(formula, family = gaussian, g, unpenalized, b_wght, data, subset, contrast = NULL, control = list()){
+cvdglars <- function(formula, family = gaussian, g, unpenalized, b_wght, data, subset, contrasts = NULL, control = list()){
 	this.call <- match.call()
 	if (missing(data))	data <- environment(formula)
 	mf <- match.call(expand.dots = FALSE)
