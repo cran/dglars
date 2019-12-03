@@ -1,8 +1,8 @@
 Package: dglars
 Type: Package
 Title: Differential Geometric Least Angle Regression
-Version: 2.1.4
-Date: 2019-12-02
+Version: 2.1.5
+Date: 2019-12-03
 Authors@R: c(person(given = "Luigi", family = "Augugliaro", email = "luigi.augugliaro@unipa.it", role = c("aut", "cre")),
              person(given = "Angelo", family = "Mineo", role = "aut"),
              person(given = "Ernst", family = "Wit", role = "aut"),
@@ -24,5 +24,5 @@ LazyLoad: yes
 Depends: Matrix, R (>= 3.2)
 NeedsCompilation: yes
 Repository: CRAN
-Packaged: 2019-12-02 15:07:58 UTC; augugliaro
-Date/Publication: 2019-12-02 15:40:14 UTC
+Packaged: 2019-12-03 12:21:59 UTC; augugliaro
+Date/Publication: 2019-12-03 17:20:09 UTC

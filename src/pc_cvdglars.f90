@@ -110,7 +110,7 @@ eps,np,ncrct,cf,NReps,nNR,conv)
                 call pc_bin_c(n,p,X,y,mi,nup,w,b_cv,phi_cv,ru_cv,dev,A,nv,nav,nnonzero,g_seq,mthd,g0,g_hat,dg_max,eps,np,&
                                 ncrct,cf,NReps,nNR,conv(nfold + 1))
             else
-                call pc_bin_c(linkid,n,p,X,y,mi,nup,w,b_cv,phi_cv,ru_cv,dev,A,nv,nav,nnonzero,g_seq,mthd,g0,g_hat,dg_max,eps,&
+                call pc_bin_g(linkid,n,p,X,y,mi,nup,w,b_cv,phi_cv,ru_cv,dev,A,nv,nav,nnonzero,g_seq,mthd,g0,g_hat,dg_max,eps,&
                                 np,ncrct,cf,NReps,nNR,conv(nfold + 1))
             end if
         case (3) !poisson

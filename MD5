@@ -1,5 +1,5 @@
-11c1f27df26d45500f16b0470070ba3d *ChangeLog
-0592706b96cbdc4b6395cb1651791e20 *DESCRIPTION
+10b1d949150f504b3221ee3dee90f253 *ChangeLog
+fee96b390802b703f38f6f2b8c4975f0 *DESCRIPTION
 2c8b48af4dd31c66d2f44aacffb87212 *NAMESPACE
 6f33de887e28148af8587450070830e5 *R/AIC.dglars.R
 2228b8cceb54976f0e7cd7944e144292 *R/BIC.dglars.R
@@ -46,7 +46,7 @@ cbaca7951b5f190703e36038627f7743 *man/AIC.dglars.Rd
 85d3dcefdc45763ae9ae08639a857147 *man/coef.dglars.Rd
 d1b9a3da93e2abca4caaf2766f4c9986 *man/cvdglars.Rd
 f4b6368a63259214f352a920b395e563 *man/dglars-internal.Rd
-4e19cf5f1ba938b5d1751bb44b143ad4 *man/dglars-package.Rd
+d24b1929e69efa1972ade0319d8ec8c8 *man/dglars-package.Rd
 2cfef32228cd4968e2033fd6fff4f246 *man/dglars.Rd
 50a780b6879f73ec88258a113bc797f9 *man/duke.Rd
 645787e91b5c20bff4af646181d5e65b *man/gdf.Rd
@@ -59,7 +59,7 @@ ccc010df63c32fd478dd4319cb6bc591 *man/plot.dglars.Rd
 f2a6b72207579c50a71cbc47b69c6858 *man/print.cvdglars.Rd
 3e00d3d5fe2cad978f385297af928fac *man/print.dglars.Rd
 de6fb5edab20fc1c89a291fe825bee9e *man/summary.dglars.Rd
-19fd579e7f874ae6d4bf38a9ff2627ce *src/Makevars
+90640af41ecc3d2c1f46a98f7c0d69ef *src/Makevars
 4716656f5406f2707c98565f1c3311ef *src/ccd_bin_c.f90
 cb98e5576f6cadf90dd9e5dd248c3923 *src/ccd_cvdglars.f90
 b335eab6dfb26342f2b4cf19aa0f9e26 *src/ccd_pois_c.f90
@@ -67,7 +67,7 @@ b335eab6dfb26342f2b4cf19aa0f9e26 *src/ccd_pois_c.f90
 e02ed9543af287c88028075470d5d336 *src/init.c
 83a0b4a9df020717de6b0b40f370bcea *src/pc_bin_c.f90
 0517dcf3e90eed1a01d91b7ce36fb4da *src/pc_bin_g.f90
-6e7ab10eafa27ba1d5aad81db39a61e0 *src/pc_cvdglars.f90
+8d4ecff4904e0bdd4e98b71f553f18d4 *src/pc_cvdglars.f90
 5df850f92b3301cc4f25150d4407510d *src/pc_gamma_c.f90
 351a40d82127da58b871f66a0a2d8180 *src/pc_gamma_g.f90
 518314cd131d18f4f3afbd4c23e0992c *src/pc_gaussian_c.f90
