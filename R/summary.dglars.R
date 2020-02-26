@@ -25,10 +25,8 @@ summary.dglars <- function(object, type = c("AIC", "BIC"), digits = max(3, getOp
         cat("\n\t dispersion parameter for",object$family$family, "family taken to be 1")
     cat("\n\n===============================================================")
     cat("\n\nSummary of the Selected Model")
-    if(!is.null(tbl$formula.gof)){
-        cat("\n\n    Formula: ")
-        print(tbl$formula.gof)
-    } else cat("\n\n")
+    cat("\n\n    Formula: ")
+    print(tbl$formula.gof, showEnv = FALSE)
     cat("     Family:", sQuote(object$family$family))
     cat("\n       Link:", sQuote(object$family$link))
     if(!is.null(object$unpenalized))

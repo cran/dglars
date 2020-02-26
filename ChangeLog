@@ -1,3 +1,8 @@
+2020-02-25 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.6
+    * fixed bug in dglars.fit
+    * fixed bug in grcv
+    * fixed bug in cvdglars.fit
+
 2019-12-03 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.5
     * fixed bug in pc_cvdglars.f90
 

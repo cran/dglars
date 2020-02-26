@@ -12,8 +12,8 @@ Differential geometric least angle regression method for fitting sparse generali
 \tabular{ll}{
 Package: \tab dglars\cr
 Type: \tab Package\cr
-Version: \tab 2.1.5\cr
-Date: \tab 2019-12-03\cr
+Version: \tab 2.1.6\cr
+Date: \tab 2020-02-25\cr
 License: \tab GPL (>=2)
 }
 }

@@ -1,5 +1,6 @@
 dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control = list()){
 	this.call <- match.call()
+    frml <- paste(deparse(substitute(y)), "~", deparse(substitute(X)))
 	if(is.data.frame(X)) X <- as.matrix(X)
     if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
 	if(missing(unpenalized)){
@@ -27,7 +28,7 @@ dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control 
 	}
 	if(missing(b_wght)) b_wght <- double(dim(X)[2] + 1)
 	else {
-		if(!is.vector(b_wght)) stop("argument 'b_wght' is not a vector")
+		if(!is.vector(b_wght)) stop("argument 'b_wformulaght' is not a vector")
 		if(is.list(b_wght)) stop("argument 'b_wght' can not be a list")
 		if(is.factor(b_wght)) stop("argument 'b_wght' can not be a factor")
 		if(is.character(b_wght)) stop("vector 'b_wght' can not be a character")
@@ -111,7 +112,7 @@ dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control 
         if(is.vector(ny)) frq <- ny
         else frq <- ny[, 1] / (ny[, 1] + ny[, 2])
         if(any(frq < 0 | frq > 1))
-            stop("some element of 'y' is outside of its range")
+            stop("some element of 'y' is outside oformulaf its range")
     }
 	if(!is.list(control))
     stop("'control' is not a list")
@@ -176,6 +177,7 @@ dglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control 
 			    pc = dglars_pc(n, p, X, ny, nup, unpenalized, b_wght, fmltmp, linkid, setting),
 			    ccd = dglars_ccd(n, p, X, ny, g, nup, unpenalized, b_wght, fmltmp, linkid, setting)
 			   )
+    fit$formula <- frml
 	fit$call <- this.call
 	fit$family <- family
 	fit$y <- y

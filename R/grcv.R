@@ -30,9 +30,11 @@ grcv <- function(object, type = c("BIC", "AIC"), nit = 10L, trace = FALSE, contr
             # Step 2: variable selection #
             ##############################
             if(trace) cat("Step 2: variable selection... ")
-            data.train <- data.frame(yt = y1, Xt = X1)
-            frml <- as.formula(paste("yt ~ ", paste(names(data.train)[-1L], collapse = " + ")))
-            out_update <- update(object, formula. = frml, data = data.train, control = control)
+            if(as.list(object$call)[[1L]] == "dglars") {
+                data.train <- data.frame(yt = y1, Xt = X1)
+                frml <- as.formula(paste("yt ~ ", paste(names(data.train)[-1L], collapse = " + ")))
+                out_update <- update(object, formula. = frml, data = data.train, control = control)
+            } else out_update <- update(object, X = X1, y = y1)
             if(out_update$conv != 0) stop("error in Step 2: dglars does not converge")
             out_gof <- switch(type,
                             "AIC" = AIC(out_update, phi = "pearson", ...),
@@ -48,9 +50,7 @@ grcv <- function(object, type = c("BIC", "AIC"), nit = 10L, trace = FALSE, contr
             else suppressWarnings(out_glm <- try(glm(y2 ~ X2[, A, drop = FALSE], family = object$family, start = bhat[abs(bhat) > 0]), silent = TRUE))
             if(class(out_glm)[1L] != "try-error") rp <- residuals.glm(out_glm, type = "pearson")
             else {
-                data.test <- data.frame(yt = y2, Xt = X2[, A, drop = FALSE])
-                frml <- as.formula(paste("yt ~ ", paste(names(data.test)[-1L], collapse = " + ")))
-                out_update <- update(object, formula. = frml, data = data.test, control = list(g0 = 1.0e-4))
+                out_update <- dglars.fit(X = X2[, A, drop = FALSE], y = y2, family = object$family, control = list(g0 = 1.0e-4))
                 if(out_update$conv != 0) stop("error in Step 3: I can not compute the maximum likelihood estimates.")
                 np <- out_update$np
                 mu <- as.vector(predict.dglars(out_update, type = "mu", g = out_update$g[np]))

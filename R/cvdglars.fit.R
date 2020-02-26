@@ -1,5 +1,6 @@
 cvdglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, control = list()){
 	this.call <- match.call()
+    frml <- as.formula(paste(deparse(substitute(y)), "~", deparse(substitute(X))))
 	if(is.data.frame(X)) X <- as.matrix(X)
     if(is.null(colnames(X))) colnames(X) <- paste("X", 1:dim(X)[2], sep = "")
 	if(missing(unpenalized)){
@@ -204,6 +205,7 @@ cvdglars.fit <- function(X, y, family = gaussian, g, unpenalized, b_wght, contro
 			   pc = cvdglars_pc(n, p, X, ny, nup, unpenalized, b_wght, familyid, linkid, setting),
 			   ccd = cvdglars_ccd(n, p, X, ny, g, nup, unpenalized, b_wght, familyid, linkid, setting)
 			   )
+    fit$formula_cv <- update(frml, as.formula(paste(" ~ ", paste(fit$var_cv,collapse = " + "))))
 	fit$call <- this.call
 	fit$family <- family
 	fit$y <- y
