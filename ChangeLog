@@ -1,3 +1,7 @@
+2023-10-08 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.6
+    * fixed bung in phihat function
+    * fixed bung in grcv function
+    
 2020-02-25 Luigi Augugliaro <luigi.augugliaro@unipa.it> version 2.1.6
     * fixed bug in dglars.fit
     * fixed bug in grcv

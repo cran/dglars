@@ -31,7 +31,7 @@ Bias Correction in Generalized Linear Models,
 
 Jorgensen B. (1997, ISBN:0412997188)
 \emph{The Theory of Dispersion Models},
-Chapman \& Hall, Great Britain.
+Chapman and Hall, Great Britain.
 
 Pazira H., Augugliaro L. and Wit E.C. (2018) <doi:10.1007/s11222-017-9761-7>
 Extended differential-geometric LARS for high-dimensional GLMs with general dispersion parameter,

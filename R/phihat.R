@@ -1,5 +1,5 @@
 phihat <- function(object, type = c("pearson", "deviance", "mle", "grcv"), g = NULL, ...){
-    if(class(object) != "dglars")
+    if(!inherits(object, what = "dglars"))
         stop("this function works only with objects with class 'dglars'")
     family_used <- object$family$family
     type <- match.arg(type)

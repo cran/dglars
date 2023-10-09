@@ -1,5 +1,5 @@
 grcv <- function(object, type = c("BIC", "AIC"), nit = 10L, trace = FALSE, control = list(), ...) {
-    if(class(object) != "dglars") stop("the general refitted cross-Validation estimator is avaiable only for objects of class 'dglars'")
+    if(!inherits(object, what = "dglars")) stop("the general refitted cross-Validation estimator is avaiable only for objects of class 'dglars'")
     if(is.element(object$family$family, c("poisson", "binomial"))) {
         phih <- 1
         names(phih) <- "phi"

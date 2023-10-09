@@ -216,7 +216,7 @@ related to the algorithm used to fit the dgLARS solution curve. The values retur
 }
 \references{
 Augugliaro L., Mineo A.M. and Wit E.C. (2014) <doi:10.18637/jss.v059.i08>
-\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
+\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{https://www.jstatsoft.org/v59/i08/}.
 
 Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models}, \emph{Journal of the Royal Statistical Society. Series B.}, Vol 75(3), 471-498.

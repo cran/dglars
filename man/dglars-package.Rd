@@ -12,8 +12,8 @@ Differential geometric least angle regression method for fitting sparse generali
 \tabular{ll}{
 Package: \tab dglars\cr
 Type: \tab Package\cr
-Version: \tab 2.1.6\cr
-Date: \tab 2020-02-25\cr
+Version: \tab 2.1.7\cr
+Date: \tab 2023-10-08\cr
 License: \tab GPL (>=2)
 }
 }
@@ -28,7 +28,7 @@ Augugliaro L., Mineo A.M. and Wit E.C. (2016) <doi:10.1093/biomet/asw023>
 \emph{A differential-geometric approach to generalized linear models with grouped predictors}, Vol 103(3), 563-577.
 
 Augugliaro L., Mineo A.M. and Wit E.C. (2014) <doi:10.18637/jss.v059.i08>
-\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{http://www.jstatsoft.org/v59/i08/}.
+\emph{dglars: An R Package to Estimate Sparse Generalized Linear Models}, \emph{Journal of Statistical Software}, Vol 59(8), 1-40. \url{https://www.jstatsoft.org/v59/i08/}.
 
 Augugliaro L., Mineo A.M. and Wit E.C. (2013) <doi:10.1111/rssb.12000>
 \emph{dgLARS: a differential geometric approach to sparse generalized linear models},

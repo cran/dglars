@@ -40,7 +40,7 @@ function qnorm ( p )
 !
   implicit none
 
-  real ( kind = 8 ), parameter, dimension ( 8 ) :: a = (/ &
+  double precision, parameter, dimension ( 8 ) :: a = (/ &
     3.3871328727963666080D+00, &
     1.3314166789178437745D+02, &
     1.9715909503065514427D+03, &
@@ -49,7 +49,7 @@ function qnorm ( p )
     6.7265770927008700853D+04, &
     3.3430575583588128105D+04, &
     2.5090809287301226727D+03 /)
-  real ( kind = 8 ), parameter, dimension ( 8 ) :: b = (/ &
+  double precision, parameter, dimension ( 8 ) :: b = (/ &
     1.0D+00, &
     4.2313330701600911252D+01, &
     6.8718700749205790830D+02, &
@@ -58,7 +58,7 @@ function qnorm ( p )
     3.9307895800092710610D+04, &
     2.8729085735721942674D+04, &
     5.2264952788528545610D+03 /)
-  real   ( kind = 8 ), parameter, dimension ( 8 ) :: c = (/ &
+  double precision, parameter, dimension ( 8 ) :: c = (/ &
     1.42343711074968357734D+00, &
     4.63033784615654529590D+00, &
     5.76949722146069140550D+00, &
@@ -67,9 +67,9 @@ function qnorm ( p )
     2.41780725177450611770D-01, &
     2.27238449892691845833D-02, &
     7.74545014278341407640D-04 /)
-  real ( kind = 8 ), parameter :: const1 = 0.180625D+00
-  real ( kind = 8 ), parameter :: const2 = 1.6D+00
-  real ( kind = 8 ), parameter, dimension ( 8 ) :: d = (/ &
+  double precision, parameter :: const1 = 0.180625D+00
+  double precision, parameter :: const2 = 1.6D+00
+  double precision, parameter, dimension ( 8 ) :: d = (/ &
     1.0D+00, &
     2.05319162663775882187D+00, &
     1.67638483018380384940D+00, &
@@ -78,7 +78,7 @@ function qnorm ( p )
     1.51986665636164571966D-02, &
     5.47593808499534494600D-04, &
     1.05075007164441684324D-09 /)
-  real ( kind = 8 ), parameter, dimension ( 8 ) :: e = (/ &
+  double precision, parameter, dimension ( 8 ) :: e = (/ &
     6.65790464350110377720D+00, &
     5.46378491116411436990D+00, &
     1.78482653991729133580D+00, &
@@ -87,7 +87,7 @@ function qnorm ( p )
     1.24266094738807843860D-03, &
     2.71155556874348757815D-05, &
     2.01033439929228813265D-07 /)
-  real ( kind = 8 ), parameter, dimension ( 8 ) :: f = (/ &
+  double precision, parameter, dimension ( 8 ) :: f = (/ &
     1.0D+00, &
     5.99832206555887937690D-01, &
     1.36929880922735805310D-01, &
@@ -96,13 +96,13 @@ function qnorm ( p )
     1.84631831751005468180D-05, &
     1.42151175831644588870D-07, &
     2.04426310338993978564D-15 /)
-  real ( kind = 8 ) p
-  real ( kind = 8 ) q
-  real ( kind = 8 ) r
-  real ( kind = 8 ) qnorm 
-  real ( kind = 8 ) r8poly_value
-  real ( kind = 8 ), parameter :: split1 = 0.425D+00
-  real ( kind = 8 ), parameter :: split2 = 5.0D+00
+  double precision :: p
+  double precision :: q
+  double precision :: r
+  double precision :: qnorm 
+  double precision :: r8poly_value
+  double precision, parameter :: split1 = 0.425D+00
+  double precision, parameter :: split2 = 5.0D+00
 
   if ( p <= 0.0D+00 ) then
     qnorm = - huge ( p )
@@ -202,12 +202,12 @@ function r8poly_value ( n, a, x )
 !
   implicit none
 
-  integer ( kind = 4 ) n
+  integer :: n
 
-  real ( kind = 8 ) a(n)
-  integer ( kind = 4 ) i
-  real ( kind = 8 ) r8poly_value
-  real ( kind = 8 ) x
+  double precision :: a(n)
+  integer :: i
+  double precision :: r8poly_value
+  double precision :: x
 
   r8poly_value = 0.0D+00
   do i = n, 1, -1
@@ -233,9 +233,9 @@ function dnorm( eta )
 !   Input,  double precision :: eta
 !   Output, double precision :: dnorm, the value of the standard normal distribution evaluaed at eta
 implicit none
-real (kind = 8) eta,x
-real (kind = 8) dnorm
-real (kind = 8), parameter :: const = 1.d0/sqrt(8.d0*atan(1.d0))
+double precision :: eta,x
+double precision :: dnorm
+double precision, parameter :: const = 1.d0/sqrt(8.d0*atan(1.d0))
 if(eta.eq.0.d0) then
     dnorm = const
     return
@@ -261,9 +261,9 @@ function qcauchy( p )
 !   Input,  double precision :: p
 !   Output, double precision :: qcauchy, the quantile of the Cauchy distribution corresponding to p
 implicit none
-real ( kind = 8 ) p
-real ( kind = 8 ) qcauchy
-real (kind = 8), parameter :: pi = 4.d0*atan(1.d0)
+double precision :: p
+double precision :: qcauchy
+double precision, parameter :: pi = 4.d0*atan(1.d0)
 if(p .eq. 0.5d0) then
     qcauchy = 0.d0
 else
@@ -287,9 +287,9 @@ function pcauchy( eta )
 !   Input,  double precision :: eta
 !   Output, double precision :: pcauchy, the value of the cumulative distribution function evaluate at eta
 implicit none
-real ( kind = 8 ) eta
-real ( kind = 8 ) pcauchy
-real (kind = 8), parameter :: pi = 4.d0*atan(1.d0)
+double precision :: eta
+double precision :: pcauchy
+double precision, parameter :: pi = 4.d0*atan(1.d0)
 if(eta .eq. 0.d0) then
     pcauchy=0.5d0
 else
@@ -314,9 +314,9 @@ function dcauchy( eta )
 !   Input,  double precision :: eta
 !   Output, double precision :: dcauchy, the value of the denisty function of the Cauchy didstribution
 implicit none
-real ( kind = 8 ) eta
-real ( kind = 8 ) dcauchy
-real (kind = 8), parameter :: pi = 4.d0*atan(1.d0)
+double precision :: eta
+double precision :: dcauchy
+double precision, parameter :: pi = 4.d0*atan(1.d0)
 dcauchy = 1.d0/(pi * (1.d0 + eta**2))
 return
 end
